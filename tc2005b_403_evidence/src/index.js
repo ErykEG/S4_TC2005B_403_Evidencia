@@ -6,7 +6,7 @@ import App from "./Components/App";
 import Carousel from "./Components/Carousel";
 import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById("root")); // Comentario
 root.render(
   <React.StrictMode>
     <App />
