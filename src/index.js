@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById("root")); // Comentario
 root.render(
   <React.StrictMode>
     <App />
-    <Carousel />
+    {/* <Carousel /> */}
   </React.StrictMode>
 );
 
