@@ -3,6 +3,8 @@
     --white:#36242d;
 }
 
+/* ejemplo: background-color: var(--green); */ 
+
 .App {
   text-align: center;
 }
