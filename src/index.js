@@ -1,23 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./Components/Styles/index.css";
-import App from "./Components/App.js";
-import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Auth0ProviderWithNavigate from "./Components/auth0-provider-with-navigate";
-import { BrowserRouter } from "react-router-dom";
-import NavBar from "./Components/navbar";
-import { useAuth0 } from "@auth0/auth0-react";
+import App from "./Components/App";
+import Carousel from "./Components/Carousel";
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
+const root = ReactDOM.createRoot(document.getElementById("root")); // Comentario el pepe
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Auth0ProviderWithNavigate>
-        <App />
-      </Auth0ProviderWithNavigate>
-    </BrowserRouter>
+    <App />
+    {/* <Carousel /> */}
   </React.StrictMode>
 );
 
