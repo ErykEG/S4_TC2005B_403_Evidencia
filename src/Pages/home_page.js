@@ -13,7 +13,6 @@ function HomePage() {
           <div></div>
         ) : (
           <div>
-            <Login />
             <Signup />
           </div>
         )}

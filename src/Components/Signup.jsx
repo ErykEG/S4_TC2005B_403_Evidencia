@@ -6,13 +6,19 @@ export default function Singnup() {
   const { loginWithRedirect } = useAuth0();
 
   return (
-    <Button
-      variant="warning"
-      onClick={() =>
-        loginWithRedirect({ authorizationParams: { screen_hint: "signup" } })
-      }
-    >
-      Signup
-    </Button>
+    <div>
+      <h1>Welcome to the Nagarro Project Management Web App!</h1>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <Button
+        onClick={() =>
+          loginWithRedirect({ authorizationParams: { screen_hint: "signup" } })
+        }
+      >
+        Sign Up or Log In Here!
+      </Button>
+    </div>
   );
 }

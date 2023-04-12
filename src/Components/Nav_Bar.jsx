@@ -27,6 +27,9 @@ function NavBar() {
               <Link className="nav-link" to="/profile">
                 Profile
               </Link>
+              <Link className="nav-link" to="/candidates">
+                Candidates
+              </Link>
               {isAdmin && (
                 <Link className="nav-link" to="/admin">
                   Admin

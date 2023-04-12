@@ -10,6 +10,7 @@ import NavBar from "./Nav_Bar";
 import PageLoader from "./Page_Loader";
 import { AuthenticationGuard } from "./Authentication_Guard";
 import AdminPage from "../Pages/admin_page";
+import candidates from "../Pages/candidates";
 import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
@@ -35,6 +36,10 @@ function App() {
         <Route
           path="/admin"
           element={<AuthenticationGuard component={AdminPage} />}
+        />
+        <Route
+          path="/candidates"
+          element={<AuthenticationGuard component={candidates} />}
         />
         <Route path="/callback" element={<CallbackPage />} />
         <Route path="*" element={<NotFoundPage />} />
