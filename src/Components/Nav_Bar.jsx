@@ -4,7 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useState, useEffect } from "react";
-import Logout from "./logout";
+import Logout from "./Logout";
 
 function NavBar() {
   const { user } = useAuth0();

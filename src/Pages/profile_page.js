@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import RedirectLogin from "../Components/RedirectLogin";
-import Logout from "../Components/logout";
+import RedirectLogin from "../Components/Redirect_Login";
+import Logout from "../Components/Logout";
 
 function Profile() {
   const { user, isAuthenticated, isLoading, getAccessTokenSilently } =

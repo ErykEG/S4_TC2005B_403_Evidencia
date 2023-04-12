@@ -1,16 +1,16 @@
 import "./Styles/App.css";
-import Login from "./login";
-import Logout from "./logout";
-import Profile from "../Pages/profile-page";
-import { useAuth0 } from "@auth0/auth0-react";
+import Login from "./Login";
+import Logout from "./Logout";
+import Profile from "../Pages/profile_page";
 import { Route, Routes } from "react-router-dom";
-import HomePage from "../Pages/home-page";
-import CallbackPage from "../Pages/callback-page";
-import NotFoundPage from "../Pages/not-found-page";
-import NavBar from "./navbar";
-import PageLoader from "./page-loader";
-import { AuthenticationGuard } from "./authentication-guard";
-import AdminPage from "../Pages/admin-page";
+import HomePage from "../Pages/home_page";
+import CallbackPage from "../Pages/callback_page";
+import NotFoundPage from "../Pages/not_found_page";
+import NavBar from "./Nav_Bar";
+import PageLoader from "./Page_Loader";
+import { AuthenticationGuard } from "./Authentication_Guard";
+import AdminPage from "../Pages/admin_page";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
   const { isAuthenticated, isLoading } = useAuth0();
