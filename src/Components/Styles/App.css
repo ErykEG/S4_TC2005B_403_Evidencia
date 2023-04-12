@@ -1,9 +1,9 @@
-:root{
-    --green:#c8d4d6;
-    --white:#36242d;
+:root {
+  --green: #c8d4d6;
+  --white: #36242d;
 }
 
-/* ejemplo: background-color: var(--green); */ 
+/* ejemplo: background-color: var(--green); */
 
 .App {
   text-align: center;

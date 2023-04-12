@@ -1,49 +1,46 @@
 import "./Styles/App.css";
-import { useEffect, useState } from "react";
-import Authpost from './Authpost.js'; 
+import Login from "./login";
+import Logout from "./logout";
+import Profile from "../Pages/profile-page";
+import { useAuth0 } from "@auth0/auth0-react";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "../Pages/home-page";
+import CallbackPage from "../Pages/callback-page";
+import NotFoundPage from "../Pages/not-found-page";
+import NavBar from "./navbar";
+import PageLoader from "./page-loader";
+import { AuthenticationGuard } from "./authentication-guard";
+import AdminPage from "../Pages/admin-page";
 
 function App() {
-  const [data, setData] = useState([]);
+  const { isAuthenticated, isLoading } = useAuth0();
 
-  // El fetch retorna una promesa, y convertirlo a .json es otra operación asyncrona.
-  // Por esa rason tenemos 2 awaits.
-
-  async function getData() {
-    let res = await fetch("https://edbapi.azurewebsites.net/api/stack");
-    let dataJson = await res.json();
-    setData(dataJson);
+  if (isLoading) {
+    return (
+      <div className="page-layout">
+        <PageLoader />
+      </div>
+    );
   }
-  
-
-
-  useEffect(() => {
-    getData();
-  }, []);
 
   return (
-    <div className="App">
-      <h1>Listado de candidatos</h1>
-      <div className="center">
-        <table>
-          <tr>
-            <th>Id</th>
-            <th>Name</th>
-          </tr>
-          {data.map((res) => (
-            <tr>
-              <td>{res.Id_Stack}</td>
-              <td>{res.Name_Stack}</td>
-              <td>{res.Version_Stack}</td>
-              <td>{res.Requisite_Stack}</td>
-            </tr>
-          ))}
-        </table>
-      </div>
-
-      <Authpost />
+    <div>
+      {isAuthenticated && <NavBar />}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/profile"
+          element={<AuthenticationGuard component={Profile} />}
+        />
+        <Route
+          path="/admin"
+          element={<AuthenticationGuard component={AdminPage} />}
+        />
+        <Route path="/callback" element={<CallbackPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     </div>
   );
 }
 
 export default App;
-
