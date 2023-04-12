@@ -1,24 +1,22 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import Button from "react-bootstrap/Button";
+import "./Signup.css";
 
 export default function Singnup() {
   const { loginWithRedirect } = useAuth0();
 
   return (
     <div>
-      <h1>Welcome to the Nagarro Project Management Web App!</h1>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <Button
+      <button
+        className="button"
         onClick={() =>
           loginWithRedirect({ authorizationParams: { screen_hint: "signup" } })
         }
+        title="Sign Up or Log In Here!"
+        accessibilityLabel="Learn more about this purple button"
       >
         Sign Up or Log In Here!
-      </Button>
+      </button>
     </div>
   );
 }
