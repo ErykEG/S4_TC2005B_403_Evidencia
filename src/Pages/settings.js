@@ -2,10 +2,10 @@ import "../Components/Styles/Settings.css";
 
 const Settings = () => {
   return (
-    <div className="settings">
+    <div className="settings" style={{height: "100vh"}}>
       <p>Configuracion de la cuenta</p>
       <p>Preferencias del usuario</p>
-      <p>Importar Bases de Datos</p>
+      <p>Importar Bases de Datoss</p>
     </div>
   );
 };

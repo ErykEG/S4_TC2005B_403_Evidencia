@@ -1,4 +1,4 @@
-import "../Components/Styles/App.css";
+// import "../Components/Styles/App.css";
 import { useEffect, useState } from "react";
 
 function Candidates() {

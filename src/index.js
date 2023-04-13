@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./Components/Styles/index.css";
-import App from "./Components/App.jsx";
+import App from "./App.js";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Auth0ProviderWithNavigate from "./Components/Auth0_Provider_With_Navigate";
