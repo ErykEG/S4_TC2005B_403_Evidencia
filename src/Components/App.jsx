@@ -12,6 +12,7 @@ import { AuthenticationGuard } from "./Authentication_Guard";
 import AdminPage from "../Pages/admin_page";
 import candidates from "../Pages/candidates";
 import { useAuth0 } from "@auth0/auth0-react";
+import Settings from "./Settings";
 
 function App() {
   const { isAuthenticated, isLoading } = useAuth0();
@@ -41,6 +42,7 @@ function App() {
           path="/candidates"
           element={<AuthenticationGuard component={candidates} />}
         />
+        <Route path="/settings" element={<AuthenticationGuard component={Settings} />} />
         <Route path="/callback" element={<CallbackPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

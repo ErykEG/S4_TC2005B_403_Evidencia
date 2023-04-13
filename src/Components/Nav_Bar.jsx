@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useState, useEffect } from "react";
 import Logout from "./Logout";
+import Settings from "./Settings";
 
 function NavBar() {
   const { user } = useAuth0();
@@ -37,6 +38,9 @@ function NavBar() {
               )}
             </Nav>
             <Nav className="ml-auto">
+              <Link className="nav-link" to="/settings">
+                Settings
+              </Link>
               <Logout />
             </Nav>
           </Container>
