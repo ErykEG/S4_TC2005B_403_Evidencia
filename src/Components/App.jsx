@@ -42,7 +42,10 @@ function App() {
           path="/candidates"
           element={<AuthenticationGuard component={candidates} />}
         />
-        <Route path="/settings" element={<AuthenticationGuard component={Settings} />} />
+        <Route
+          path="/settings"
+          element={<AuthenticationGuard component={Settings} />}
+        />
         <Route path="/callback" element={<CallbackPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

@@ -1,0 +1,23 @@
+body {
+  background-color: #06041f;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+.loaderImage {
+  text-align: center;
+  pointer-events: none;
+  animation: rotate infinite 3s;
+}
+
+.loaderBackground {
+  background-color: #06041f;
+}

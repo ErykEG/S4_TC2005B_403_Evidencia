@@ -22,7 +22,7 @@ function NavBar() {
       <>
         <Navbar bg="dark" variant="dark">
           <Container>
-            <Navbar.Brand href="/">Home</Navbar.Brand>
+            <Navbar.Brand href="/home">Home</Navbar.Brand>
 
             <Nav className="me-auto">
               <Link className="nav-link" to="/profile">

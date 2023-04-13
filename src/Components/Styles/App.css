@@ -1,12 +1,17 @@
 :root {
-  --green: #c8d4d6;
+  --green: #06041f;
   --white: #36242d;
 }
 
 /* ejemplo: background-color: var(--green); */
 
+body {
+  background-color: #06041f;
+}
+
 .App {
   text-align: center;
+  background-color: #06041f;
 }
 
 .App-logo {

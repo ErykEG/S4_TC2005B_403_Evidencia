@@ -1,10 +1,17 @@
 import React from "react";
+import "./Styles/Page_Loader.css";
+import Image from "./Images/loadingImg.png";
 
 function PageLoader() {
-  const loadingImg = "https://cdn.auth0.com/blog/hello-auth0/loader.svg";
   return (
-    <div className="loader">
-      <img src={loadingImg} alt="Loading..." height="50%" />
+    <div className="loaderBackground">
+      <div className="loaderImage">
+        <img
+          src={process.env.PUBLIC_URL + Image}
+          alt="Nagarro logo"
+          width="50%"
+        />
+      </div>
     </div>
   );
 }
