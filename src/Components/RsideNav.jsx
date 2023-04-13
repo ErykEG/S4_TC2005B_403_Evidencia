@@ -17,7 +17,7 @@ function RsideNav() {
             <SideNav.Nav defaultSelected="home">
                 <NavItem eventKey="profile">
                     <NavIcon>
-                        <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+                        <i className="fa fa-fw fa-user" style={{ fontSize: '1.25em' }} />
                     </NavIcon>
                     <NavText>
                         Profile
@@ -25,7 +25,7 @@ function RsideNav() {
                 </NavItem>
                 <NavItem eventKey="candidates">
                     <NavIcon>
-                        <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+                        <i className="fa fa-fw fa-id-card" style={{ fontSize: '1.25em' }} />
                     </NavIcon>
                     <NavText>
                         Candidates
@@ -33,7 +33,7 @@ function RsideNav() {
                 </NavItem>
                 <NavItem eventKey="admin">
                     <NavIcon>
-                        <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+                        <i className="fa fa-fw fa-unlock" style={{ fontSize: '1.25em' }} />
                     </NavIcon>
                     <NavText>
                         Admin
@@ -41,7 +41,7 @@ function RsideNav() {
                 </NavItem>
                 <NavItem eventKey="settings">
                     <NavIcon>
-                        <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+                        <i className="fa fa-fw fa-gear" style={{ fontSize: '1.25em' }} />
                     </NavIcon>
                     <NavText>
                         Settings
