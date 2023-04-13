@@ -1,6 +1,6 @@
 import React from "react";
 import "./Styles/Page_Loader.css";
-import Image from "./Images/loadingImg.png";
+import Image from "../Assets/Images/loadingImg.png";
 
 function PageLoader() {
   return (

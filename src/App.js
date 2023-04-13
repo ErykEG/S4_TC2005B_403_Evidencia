@@ -1,4 +1,5 @@
 import "./App.css";
+import React from "react";
 // Pages
 import HomePage from "./Pages/home_page";
 import CallbackPage from "./Pages/callback_page";
@@ -34,31 +35,35 @@ function App() {
   }
 
   return (
-    <div>
-      {/* {isAuthenticated && <NavBar />} */}
-      {isAuthenticated && <RsideNav />}
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route
-          path="/profile"
-          element={<AuthenticationGuard component={Profile} />}
-        />
-        <Route
-          path="/admin"
-          element={<AuthenticationGuard component={AdminPage} />}
-        />
-        <Route
-          path="/candidates"
-          element={<AuthenticationGuard component={Candidates} />}
-        />
-        <Route
-          path="/settings"
-          element={<AuthenticationGuard component={Settings} />}
-        />
-        <Route path="/callback" element={<CallbackPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </div>
+    <React.Fragment>
+      <div className="all-app">
+        {/* {isAuthenticated && <NavBar />} */}
+        {isAuthenticated && <RsideNav />}
+        <div className="main-content" style={{minHeight: "100vh"}}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route
+              path="/profile"
+              element={<AuthenticationGuard component={Profile} />}
+            />
+            <Route
+              path="/admin"
+              element={<AuthenticationGuard component={AdminPage} />}
+            />
+            <Route
+              path="/candidates"
+              element={<AuthenticationGuard component={Candidates} />}
+            />
+            <Route
+              path="/settings"
+              element={<AuthenticationGuard component={Settings} />}
+            />
+            <Route path="/callback" element={<CallbackPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </div>
+      </div>
+    </React.Fragment>
   );
 }
 
