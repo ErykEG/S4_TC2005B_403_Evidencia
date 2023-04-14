@@ -1,5 +1,5 @@
 body {
-  background-color: #06041f;
+  background-color: #303446;
 }
 
 @keyframes rotate {
@@ -17,7 +17,7 @@ body {
 }
 
 .loaderBackground {
-  background-color: #06041f;
+  background-color: #303446;
 }
 
 #loaderImage {

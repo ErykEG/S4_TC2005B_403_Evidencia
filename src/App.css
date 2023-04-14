@@ -6,12 +6,12 @@
 /* ejemplo: background-color: var(--green); */
 
 body {
-  background-color: #06041f;
+  background-color: #303446;
 }
 
 .App {
   text-align: center;
-  background-color: #06041f;
+  background-color: #303446;
 }
 
 .App-logo {
@@ -92,6 +92,7 @@ table th {
 
 .main-content {
   flex: 1;
-  padding: 64px;
-  background-color: #06041f;
+  padding: 114px;
+  background-color: #303446;
+  color: #c6d0f5;
 }
