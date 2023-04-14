@@ -31,14 +31,6 @@ function RsideNav() {
                         Candidates
                     </NavText>
                 </NavItem>
-                <NavItem eventKey="admin">
-                    <NavIcon>
-                        <i className="fa fa-fw fa-unlock" style={{ fontSize: '1.25em' }} />
-                    </NavIcon>
-                    <NavText>
-                        Admin
-                    </NavText>
-                </NavItem>
                 <NavItem eventKey="settings">
                     <NavIcon>
                         <i className="fa fa-fw fa-gear" style={{ fontSize: '1.25em' }} />

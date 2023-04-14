@@ -5,7 +5,6 @@ import HomePage from "./Pages/home_page";
 import CallbackPage from "./Pages/callback_page";
 import NotFoundPage from "./Pages/not_found_page";
 import Profile from "./Pages/profile_page";
-import AdminPage from "./Pages/admin_page";
 import Candidates from "./Pages/candidates";
 import Settings from "./Pages/settings.js";
 
@@ -45,10 +44,6 @@ function App() {
             <Route
               path="/profile"
               element={<AuthenticationGuard component={Profile} />}
-            />
-            <Route
-              path="/admin"
-              element={<AuthenticationGuard component={AdminPage} />}
             />
             <Route
               path="/candidates"
