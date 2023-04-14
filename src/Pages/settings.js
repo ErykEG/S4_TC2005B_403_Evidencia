@@ -15,21 +15,21 @@ function Settings() {
   }, [user]);
 
   return (
-    <div>
+    <div className="settings-panel">
       {isAdmin ? (
         <div className="admin-settings" style={{height: "100vh"}}>
           <h3>Settings</h3>
           <p>Configuracion de la cuenta</p>
           <p>Preferencias del usuario</p>
           <p>Importar bases de datos</p>
-          <h3>Admin Settings</h3>
+          <h3 id="adminset">Admin Settings</h3>
           <p>Mis proyectos</p>
           <p>Registro de candidatos</p>
           <p>Registro de proyectos</p>
           <p>Condiguración de reglas y filtros</p>
       </div>
       ) : (
-        <div className="settings" style={{height: "100vh"}}>
+        <div className="normal-settings" style={{height: "100vh"}}>
           <h3>Settings</h3>
           <p>Configuracion de la cuenta</p>
           <p>Preferencias del usuario</p>

@@ -1,4 +1,4 @@
-import "../Components/Styles/settings.css";
+import "../Components/Styles/candidates.css";
 import { useEffect, useState } from "react";
 
 function Candidates() {
@@ -28,7 +28,7 @@ function Candidates() {
             {" "}
             {data.map((res) => {
               return (
-                <tr key={res.id}>
+                <tr key={res.id} className="table-rows">
                   {" "}
                   {Object.keys(res).map((property) => (
                     <td key={property}>{res[property]}</td>
