@@ -1,6 +1,6 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import "./Signup.css";
+import "./Styles/Signup.css";
 
 export default function Singnup() {
   const { loginWithRedirect } = useAuth0();

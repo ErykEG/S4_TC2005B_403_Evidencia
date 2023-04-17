@@ -9,9 +9,16 @@
 }
 
 button {
-  background-color: #303446;
-  text-align: left;
-  margin-left: 0px;
+  /* background-color: #303446; */
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  text-decoration: none;
+  padding-bottom: 1vh;
 }
 
 h3 {
