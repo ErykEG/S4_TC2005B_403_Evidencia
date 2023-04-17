@@ -8,6 +8,12 @@
   font-size: 18px;
 }
 
+button {
+  background-color: #303446;
+  text-align: left;
+  margin-left: 0px;
+}
+
 h3 {
   padding-bottom: 1.5vh;
 }
