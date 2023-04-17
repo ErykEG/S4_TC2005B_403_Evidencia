@@ -38,14 +38,11 @@ function Profile() {
         <h2 className="profile">{user.name}</h2>
         <br></br>
         <p className="profile">Email: {user.email}</p>
-        <p className="profile">
-          Email verified: {String(user.email_verified)}{" "}
-        </p>
         <p className="profile">Rol: {String(userRoles)}</p>
         <p className="profile"> My Projects : </p>
-        <p className="profile"> Skills : </p>
+        <p className="profile"> Languages : </p>
         <p className="profile"> Seniority: </p>
-        <div style={{ position: "absolute", bottom: "10", right: "10" }}>
+        <div style={{ position: "absolute", bottom: "0", right: "0" }}>
           <Logout />
         </div>
       </div>
