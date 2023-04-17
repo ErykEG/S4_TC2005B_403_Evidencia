@@ -17,13 +17,12 @@ function Settings() {
   return (
     <div className="settings-panel">
       {isAdmin ? (
-        <div className="admin-settings" style={{ height: "100vh" }}>
+        <div className="admin-settings" style={{ height: "100%" }}>
           <h3>Settings</h3>
           <button>Configuracion de la cuenta</button>
           <button>Preferencias del usuario</button>
           <h3 id="adminset">Admin Settings</h3>
           <button>Mis proyectos</button>
-          <br></br>
           <button>Registro de candidatos</button>
           <button>Registro de proyectos</button>
           <button>Condiguración de reglas y filtros</button>
@@ -31,10 +30,10 @@ function Settings() {
           <button>Exportar bases de datos a Excel</button>
         </div>
       ) : (
-        <div className="normal-settings" style={{ height: "100vh" }}>
+        <div className="normal-settings" style={{ height: "100%" }}>
           <h3>Settings</h3>
-          <p>Configuracion de la cuenta</p>
-          <p>Preferencias del usuario</p>
+          <button>Configuracion de la cuenta</button>
+          <button>Preferencias del usuario</button>
         </div>
       )}
     </div>

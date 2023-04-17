@@ -1,15 +1,19 @@
 .settings-panel {
+  position:relative;
   background-color: #303446;
-  margin-left: 64px;
-  width: 35vh;
-  height: 70vh;
+  margin-left: 5rem;
+  width: 20rem;
+  height: 42rem;
   text-align: left;
   border-right: 1px solid #c6d0f5;
-  font-size: 18px;
+  font-size: 1rem;
 }
 
-button {
+.settings-panel button {
   /* background-color: #303446; */
+  display: block;
+  width: 100%;
+  text-align: left;
   border: none;
   background-color: transparent;
   color: inherit;
@@ -18,17 +22,13 @@ button {
   padding: 0;
   font: inherit;
   text-decoration: none;
-  padding-bottom: 1vh;
+  padding-bottom: 0.75rem;
 }
 
 h3 {
-  padding-bottom: 1.5vh;
-}
-
-p {
-  padding-bottom: 1vh;
+  padding-bottom: 1rem;
 }
 
 #adminset {
-  margin-top: 5vh;
+  margin-top: 3rem;
 }

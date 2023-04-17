@@ -14,10 +14,10 @@ function NavBar() {
 
   useEffect(() => {
     const userRoles = user?.[`${process.env.REACT_APP_AUTH0_NAMESPACE}`] ?? [];
-    setIsAdmin(userRoles.includes("admin"));
+    setIsAdmin(userRoles.includes("Super-Manager"));
   }, [user]);
 
-  if ("isAdmin")
+  if (isAdmin)
     return (
       <>
         <Navbar bg="dark" variant="dark">
