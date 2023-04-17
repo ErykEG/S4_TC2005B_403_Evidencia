@@ -3,6 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Login from "../Components/Login";
 import Signup from "../Components/Signup";
 import NagLogo from "../Assets/Images/nagarro-logo.png";
+import "../Components/Styles/home_page.css";
 
 function HomePage() {
   const { isAuthenticated } = useAuth0();
