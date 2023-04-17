@@ -19,15 +19,16 @@ function Settings() {
       {isAdmin ? (
         <div className="admin-settings" style={{ height: "100vh" }}>
           <h3>Settings</h3>
-          <p>Configuracion de la cuenta</p>
-          <p>Preferencias del usuario</p>
+          <button>Configuracion de la cuenta</button>
+          <button>Preferencias del usuario</button>
           <h3 id="adminset">Admin Settings</h3>
-          <p>Mis proyectos</p>
-          <p>Registro de candidatos</p>
-          <p>Registro de proyectos</p>
-          <p>Condiguración de reglas y filtros</p>
-          <p>Importar bases de datos</p>
-          <button>Export Database to Excel</button>
+          <button>Mis proyectos</button>
+          <br></br>
+          <button>Registro de candidatos</button>
+          <button>Registro de proyectos</button>
+          <button>Condiguración de reglas y filtros</button>
+          <button>Importar bases de datos</button>
+          <button>Exportar bases de datos a Excel</button>
         </div>
       ) : (
         <div className="normal-settings" style={{ height: "100vh" }}>
