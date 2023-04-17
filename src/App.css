@@ -96,3 +96,14 @@ table th {
   background-color: #303446;
   color: #c6d0f5;
 }
+
+.profile {
+  text-align: center;
+  font-family: "Times New Roman";
+  font-weight: bold;
+}
+
+img.profile {
+  display: block;
+  margin: 0 auto;
+}

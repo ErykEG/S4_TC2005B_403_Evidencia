@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import RedirectLogin from "../Components/Redirect_Login";
 import Logout from "../Components/Logout";
+import "../App.css";
 
 function Profile() {
   const { user, isAuthenticated, isLoading, getAccessTokenSilently } =
@@ -29,12 +30,24 @@ function Profile() {
   return (
     isAuthenticated && (
       <div>
-        <img src={user.picture} alt={user.name} />
-        <h2>{user.name}</h2>
-        <p>Email: {user.email}</p>
-        <p>Email verified: {String(user.email_verified)} </p>
-        <p>Roles: {String(userRoles)}</p>
-        <Logout />
+        <img
+          src={user.picture}
+          alt={user.name}
+          style={{ display: "block", margin: "0 auto" }}
+        />
+        <h2 className="profile">{user.name}</h2>
+        <br></br>
+        <p className="profile">Email: {user.email}</p>
+        <p className="profile">
+          Email verified: {String(user.email_verified)}{" "}
+        </p>
+        <p className="profile">Rol: {String(userRoles)}</p>
+        <p className="profile"> My Projects : </p>
+        <p className="profile"> Skills : </p>
+        <p className="profile"> Seniority: </p>
+        <div style={{ position: "absolute", bottom: "10", right: "10" }}>
+          <Logout />
+        </div>
       </div>
     )
   );

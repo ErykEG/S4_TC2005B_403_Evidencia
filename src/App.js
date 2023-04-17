@@ -20,8 +20,6 @@ import RsideNav from "./Components/RsideNav";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
-
-
 function App() {
   const { isAuthenticated, isLoading } = useAuth0();
 
@@ -38,7 +36,7 @@ function App() {
       <div className="all-app">
         {/* {isAuthenticated && <NavBar />} */}
         {isAuthenticated && <RsideNav />}
-        <div className="main-content" style={{minHeight: "100vh"}}>
+        <div className="main-content" style={{ minHeight: "100vh" }}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route
