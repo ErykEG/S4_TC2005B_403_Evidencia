@@ -1,0 +1,10 @@
+.proyect-panel {
+  position: relative;
+  background-color: #303446;
+  margin-left: 5rem;
+  width: 20rem;
+  height: 42rem;
+  text-align: left;
+  border-right: 1px solid #c6d0f5;
+  font-size: 1rem;
+}

@@ -1,0 +1,14 @@
+.profile {
+  text-align: center;
+  font-family: inherit;
+  font-weight: bold;
+}
+
+img.profile {
+  display: block;
+  margin: 0 auto;
+}
+
+p {
+  color: white;
+}

@@ -99,7 +99,7 @@ table th {
 
 .profile {
   text-align: center;
-  font-family: "Times New Roman";
+  font-family: inherit;
   font-weight: bold;
 }
 
