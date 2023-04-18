@@ -3,6 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useState, useEffect } from "react";
 import "../Components/Styles/Settings.css";
 import { ExportExcel } from "../Components/ExportExcel.jsx";
+import ExcelFileUpload from "../Components/ImportExcel.jsx";
 
 function Settings() {
   const { user } = useAuth0();
@@ -29,6 +30,7 @@ function Settings() {
           <button>Condiguración de reglas y filtros</button>
           <button>Importar bases de datos</button>
           <button>Exportar bases de datos a Excel</button>
+          <ExcelFileUpload />
           <ExportExcel
             dataSource={"https://edbapi.azurewebsites.net/api/stack"}
             fileName={"Export Stack"}
