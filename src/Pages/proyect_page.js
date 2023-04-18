@@ -3,7 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import RedirectLogin from "../Components/Redirect_Login";
 import Logout from "../Components/Logout";
 import "../App.css";
-import { use } from "chai";
+// import { use } from "chai";
 
 function Proyect() {
   const { user } = useAuth0();
@@ -18,3 +18,5 @@ function Proyect() {
 
   return <div className="proyect-panel">{isAdmin > <h3>My Proyects</h3>}</div>;
 }
+
+export default Proyect;

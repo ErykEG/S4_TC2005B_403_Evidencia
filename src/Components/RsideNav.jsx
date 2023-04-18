@@ -23,6 +23,14 @@ function RsideNav() {
                         Profile
                     </NavText>
                 </NavItem>
+                <NavItem eventKey="proyects">
+                    <NavIcon>
+                        <i className="fa fa-fw fa-folder" style={{ fontSize: '1.25em' }} />
+                    </NavIcon>
+                    <NavText>
+                        Proyects
+                    </NavText>
+                </NavItem>
                 <NavItem eventKey="candidates">
                     <NavIcon>
                         <i className="fa fa-fw fa-id-card" style={{ fontSize: '1.25em' }} />

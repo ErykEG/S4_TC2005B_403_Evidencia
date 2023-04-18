@@ -19,6 +19,7 @@ import RsideNav from "./Components/RsideNav";
 // Modules
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import Proyect from "./Pages/proyect_page.js";
 
 function App() {
   const { isAuthenticated, isLoading } = useAuth0();
@@ -42,6 +43,10 @@ function App() {
             <Route
               path="/profile"
               element={<AuthenticationGuard component={Profile} />}
+            />
+            <Route
+              path="/proyects"
+              element={<AuthenticationGuard component={Proyect} />}
             />
             <Route
               path="/candidates"
