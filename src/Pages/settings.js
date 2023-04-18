@@ -28,8 +28,6 @@ function Settings() {
           <button>Registro de candidatos</button>
           <button>Registro de proyectos</button>
           <button>Condiguración de reglas y filtros</button>
-          <button>Importar bases de datos</button>
-          <button>Exportar bases de datos a Excel</button>
           <ExcelFileUpload />
           <ExportExcel
             dataSource={"https://edbapi.azurewebsites.net/api/stack"}

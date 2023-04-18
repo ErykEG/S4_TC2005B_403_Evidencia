@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import XLSX from "xlsx";
+import XLSX from "xlsx/dist/xlsx.full.min.js";
 
 const ExcelFileUpload = () => {
   const fileInputRef = useRef(null);
@@ -24,7 +24,7 @@ const ExcelFileUpload = () => {
 
   return (
     <div>
-      <button onClick={handleButtonClick}>Select Excel File</button>
+      <button onClick={handleButtonClick}>Select Excel File To Import</button>
       <input
         type="file"
         ref={fileInputRef}
