@@ -4,10 +4,11 @@
   margin-left: 5rem;
   width: 20rem;
   /* height: 42rem; */
-  height: 100%;
+  height: calc(100vh - 14rem);
   text-align: left;
   border-right: 1px solid #c6d0f5;
   font-size: 1rem;
+
 }
 
 .settings-panel button {

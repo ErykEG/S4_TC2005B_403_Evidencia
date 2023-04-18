@@ -17,7 +17,7 @@ function Settings() {
   return (
     <div className="settings-panel">
       {isAdmin ? (
-        <div className="admin-settings" style={{ height: "100%" }}>
+        <div className="admin-settings">
           <h3>Settings</h3>
           <button>Configuracion de la cuenta</button>
           <button>Preferencias del usuario</button>
@@ -30,7 +30,7 @@ function Settings() {
           <button>Exportar bases de datos a Excel</button>
         </div>
       ) : (
-        <div className="normal-settings" style={{ height: "100%" }}>
+        <div className="normal-settings">
           <h3>Settings</h3>
           <button>Configuracion de la cuenta</button>
           <button>Preferencias del usuario</button>
