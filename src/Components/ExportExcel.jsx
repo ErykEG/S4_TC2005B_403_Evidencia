@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import * as FileSaver from "file-saver";
 import { CSVLink } from "react-csv";
 import XLSX from "sheetjs-style";
+import "./Styles/exportExcel.css";
 
 export const ExportExcel = ({ dataSource, fileName, buttonName }) => {
   const [Data, setData] = useState([]);
