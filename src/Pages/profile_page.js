@@ -25,15 +25,11 @@ function Profile() {
   }
 
   const userRoles = user?.[`${process.env.REACT_APP_AUTH0_NAMESPACE}`] ?? [];
-  console.log(`${process.env.REACT_APP_AUTH0_NAMESPACE}`);
 
   return (
     isAuthenticated && (
       <div>
-        <img
-          src={user.picture}
-          alt={user.name}
-        />
+        <img src={user.picture} alt={user.name} />
         <h2 className="profile">{user.name}</h2>
         <br></br>
         <div id="user-details">
@@ -43,7 +39,7 @@ function Profile() {
           <p className="profile"> Languages : Spanish, English</p>
           <p className="profile"> Seniority: 3</p>
         </div>
-        <div id="logout-button"> 
+        <div id="logout-button">
           <Logout />
         </div>
       </div>
