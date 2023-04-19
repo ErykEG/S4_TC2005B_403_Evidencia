@@ -1,5 +1,6 @@
 import "../Components/Styles/candidates.css";
 import { useEffect, useState } from "react";
+import M from "./M.js"
 
 function Candidates() {
   const [data, setData] = useState([]);
@@ -19,26 +20,7 @@ function Candidates() {
 
   return (
     <div className="App">
-      <h1>Candidates List</h1>{" "}
-      <div className="center">
-        {" "}
-        <table>
-          {" "}
-          <tbody>
-            {" "}
-            {data.map((res) => {
-              return (
-                <tr key={res.id} className="table-rows">
-                  {" "}
-                  {Object.keys(res).map((property) => (
-                    <td key={property}>{res[property]}</td>
-                  ))}{" "}
-                </tr>
-              );
-            })}{" "}
-          </tbody>{" "}
-        </table>{" "}
-      </div>{" "}
+<M />
     </div>
   );
 }
