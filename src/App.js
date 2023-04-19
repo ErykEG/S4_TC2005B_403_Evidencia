@@ -1,12 +1,13 @@
 import "./App.css";
 import React from "react";
+import { useState, useEffect } from "react";
 // Pages
 import HomePage from "./Pages/home_page";
 import CallbackPage from "./Pages/callback_page";
 import NotFoundPage from "./Pages/not_found_page";
 import Profile from "./Pages/profile_page";
 import Candidates from "./Pages/candidates";
-import Settings from "./Pages/settings.js";
+import Settings from "./Pages/settings/settings.js";
 
 // Components
 import { AuthenticationGuard } from "./Components/Authentication_Guard";
@@ -22,7 +23,15 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Proyect from "./Pages/proyect_page.js";
 
 function App() {
-  const { isAuthenticated, isLoading } = useAuth0();
+  const { user, isAuthenticated, isLoading, getAccessTokenSilently } =
+    useAuth0();
+
+  const [isAssigned, setIsAssigned] = useState(false);
+
+  useEffect(() => {
+    let userRoles = user?.[`${process.env.REACT_APP_AUTH0_NAMESPACE}`] ?? [];
+    setIsAssigned(userRoles[0] !== "Unassigned");
+  }, [user]);
 
   if (isLoading) {
     return (
@@ -35,8 +44,7 @@ function App() {
   return (
     <React.Fragment>
       <div className="all-app">
-        {/* {isAuthenticated && <NavBar />} */}
-        {isAuthenticated && <RsideNav />}
+        {user && user.email_verified && isAssigned && <RsideNav />}
         <div className="main-content" style={{ minHeight: "100vh" }}>
           <Routes>
             <Route path="/" element={<HomePage />} />

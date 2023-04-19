@@ -1,14 +1,23 @@
-.profile {
+/* .profile {
   text-align: center;
-  font-family: inherit;
-  font-weight: bold;
+  color: #c6d0f5;
+} */
+
+#user-details {
+  align-items: left;
+  text-align: left;
+  color: black;
 }
 
-img.profile {
+img {
   display: block;
   margin: 0 auto;
+  text-align: center;
 }
 
-p {
-  color: white;
+#logout-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    margin: 10px;
 }

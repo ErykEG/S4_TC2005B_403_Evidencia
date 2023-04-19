@@ -2,15 +2,16 @@ import React from "react";
 import NavBar from "../Components/Nav_Bar";
 import { useAuth0 } from "@auth0/auth0-react";
 import RedirectLogin from "../Components/Redirect_Login";
+import { useState, useEffect } from "react";
 
 function CallbackPage() {
-  const { user, isAuthenticated, isLoading, getAccessTokenSilently } =
-    useAuth0();
+  const { user } = useAuth0();
+  const [isAssigned, setIsAssigned] = useState(false);
 
-  if (isLoading) {
-    return <div> Loading... </div>;
-  }
-  console.log(user);
+  useEffect(() => {
+    const userRoles = user?.[`${process.env.REACT_APP_AUTH0_NAMESPACE}`] ?? [];
+    setIsAssigned(userRoles[0] !== "Unassigned");
+  }, [user]);
 
   if (user && !user.email_verified) {
     return (
@@ -23,9 +24,17 @@ function CallbackPage() {
     );
   }
 
+  if (!isAssigned) {
+    return (
+      <div>"Please ask to be assigned a valid role and refresh the page."</div>
+    );
+  }
+
   return (
     <div className="page-layout">
-      <div className="page-layout__content" />
+      <div className="page-layout__content">
+        <p>Yipee</p>
+      </div>
     </div>
   );
 }
