@@ -30,7 +30,8 @@ function App() {
 
   useEffect(() => {
     const userRoles = user?.[`${process.env.REACT_APP_AUTH0_NAMESPACE}`] ?? [];
-    setIsAssigned(userRoles.includes("Assigned"));
+    setIsAssigned(userRoles[1] !== undefined);
+    console.log(userRoles);
   }, [user, isAssigned]);
 
   if (isLoading) {
