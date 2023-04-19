@@ -10,8 +10,8 @@ function CallbackPage() {
 
   useEffect(() => {
     const userRoles = user?.[`${process.env.REACT_APP_AUTH0_NAMESPACE}`] ?? [];
-    setIsAssigned(userRoles[1] != undefined);
-  }, [user]);
+    setIsAssigned(userRoles[1] !== undefined);
+  }, [user, isAssigned]);
 
   if (user && !user.email_verified) {
     return (
@@ -22,9 +22,7 @@ function CallbackPage() {
         />
       </div>
     );
-  }
-
-  if (user && !isAssigned) {
+  } else if (user && !isAssigned) {
     return (
       <div>
         <RedirectLogin
@@ -37,7 +35,9 @@ function CallbackPage() {
 
   return (
     <div className="page-layout">
-      <div className="page-layout__content" />
+      <div className="page-layout__content">
+        <p>Yipee</p>
+      </div>
     </div>
   );
 }
