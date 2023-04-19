@@ -31,7 +31,7 @@ function App() {
   useEffect(() => {
     let userRoles = user?.[`${process.env.REACT_APP_AUTH0_NAMESPACE}`] ?? [];
     setIsAssigned(userRoles[0] !== "Unassigned");
-  }, [user, isAssigned]);
+  }, [user]);
 
   if (isLoading) {
     return (
@@ -44,9 +44,7 @@ function App() {
   return (
     <React.Fragment>
       <div className="all-app">
-        {user && isAuthenticated && user.email_verified && isAssigned && (
-          <RsideNav />
-        )}
+        {user && user.email_verified && isAssigned && <RsideNav />}
         <div className="main-content" style={{ minHeight: "100vh" }}>
           <Routes>
             <Route path="/" element={<HomePage />} />

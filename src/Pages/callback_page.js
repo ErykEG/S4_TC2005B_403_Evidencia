@@ -7,10 +7,11 @@ import { useState, useEffect } from "react";
 function CallbackPage() {
   const { user } = useAuth0();
   const [isAssigned, setIsAssigned] = useState(false);
-  const userRoles = user?.[`${process.env.REACT_APP_AUTH0_NAMESPACE}`] ?? [];
-  setIsAssigned(userRoles[0] !== "Unassigned");
 
-  useEffect(() => {}, [user, isAssigned]);
+  useEffect(() => {
+    const userRoles = user?.[`${process.env.REACT_APP_AUTH0_NAMESPACE}`] ?? [];
+    setIsAssigned(userRoles[0] !== "Unassigned");
+  }, [user]);
 
   if (user && !user.email_verified) {
     return (
