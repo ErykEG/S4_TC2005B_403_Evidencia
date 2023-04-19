@@ -20,7 +20,7 @@ function Candidates() {
 
   return (
     <div className="App">
-<M />
+      <M />
     </div>
   );
 }
