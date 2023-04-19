@@ -11,7 +11,7 @@ function CallbackPage() {
   useEffect(() => {
     const userRoles = user?.[`${process.env.REACT_APP_AUTH0_NAMESPACE}`] ?? [];
     setIsAssigned(userRoles.includes("Assigned"));
-  }, [user]);
+  }, [user, isAssigned]);
 
   if (user && !user.email_verified) {
     return (
