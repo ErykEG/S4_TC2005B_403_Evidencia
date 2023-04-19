@@ -6,7 +6,7 @@ import CallbackPage from "./Pages/callback_page";
 import NotFoundPage from "./Pages/not_found_page";
 import Profile from "./Pages/profile_page";
 import Candidates from "./Pages/candidates";
-import Settings from "./Pages/settings.js";
+import Settings from "./Pages/settings/settings.js";
 
 // Components
 import { AuthenticationGuard } from "./Components/Authentication_Guard";

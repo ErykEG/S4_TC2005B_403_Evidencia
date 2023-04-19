@@ -1,11 +1,13 @@
-.profile {
+/* .profile {
   text-align: center;
-  color: #c6d0f5
-}
-/* #user-details {
+  color: #c6d0f5;
+} */
+
+#user-details {
+  align-items: left;
   text-align: left;
   color: black;
-} */
+}
 
 img {
   display: block;

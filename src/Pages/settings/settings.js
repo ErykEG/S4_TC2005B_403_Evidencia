@@ -1,9 +1,12 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useState, useEffect } from "react";
-import "../Components/Styles/Settings.css";
-import { ExportExcel } from "../Components/ExportExcel.jsx";
-import ExcelFileUpload from "../Components/ImportExcel.jsx";
+import "../../Components/Styles/Settings.css";
+
+import { ExportExcel } from "../../Components/ExportExcel.jsx";
+import ExcelFileUpload from "../../Components/ImportExcel.jsx";
+
+import AccountConfig from "./AccountConfig";
 
 function Settings() {
   const { user } = useAuth0();
