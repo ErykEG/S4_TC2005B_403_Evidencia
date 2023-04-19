@@ -61,6 +61,7 @@ function M() {
     };
 
     setItems((oldList) => [...oldList, item]);
+    getData2();
   }
 
   function deleteItem(id) {
@@ -134,6 +135,7 @@ function M() {
     } catch (error) {
       console.error(error);
     }
+    getData2();
   }
 
 
