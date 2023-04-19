@@ -124,139 +124,140 @@ function M() {
       console.error(error);
     }
     getData2();
-    return (
-      <div className="app">
-        <h1>Lista de Reglas</h1>
-        <div className="center">
-          <div className="d-flex">
-            <Dropdown>
-              <Dropdown.Toggle variant="success" id="dropdown-basic">
-                {nombre}
-              </Dropdown.Toggle>
+  };
 
-              <Dropdown.Menu>
-                {data.map((res) => {
-                  return (
-                    <>
-                      {Object.keys(res).map((property) => (
-                        <Dropdown.Item
-                          onClick={() => handleOptionClick(res[property])}
-                        >
-                          {res[property]}
-                        </Dropdown.Item>
-                      ))}
-                    </>
-                  );
-                })}
-              </Dropdown.Menu>
-            </Dropdown>
-            <Dropdown>
-              <Dropdown.Toggle variant="success" id="dropdown-basic">
-                {nombre2}
-              </Dropdown.Toggle>
+  return (
+    <div className="app">
+      <h1>Lista de Reglas</h1>
+      <div className="center">
+        <div className="d-flex">
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              {nombre}
+            </Dropdown.Toggle>
 
-              <Dropdown.Menu>
-                <Dropdown.Item onClick={() => handleOptionClick2("=")}>
-                  =
-                </Dropdown.Item>
-                {(nombre === "Id_Candidates" ||
-                  nombre === "Genus_Ver_Candidates") && (
+            <Dropdown.Menu>
+              {data.map((res) => {
+                return (
                   <>
-                    <Dropdown.Item onClick={() => handleOptionClick2(">")}>
-                      &gt;
-                    </Dropdown.Item>
-                    <Dropdown.Item onClick={() => handleOptionClick2("<")}>
-                      &lt;
-                    </Dropdown.Item>
-                    <Dropdown.Item onClick={() => handleOptionClick2(">=")}>
-                      &gt;=
-                    </Dropdown.Item>
-                    <Dropdown.Item onClick={() => handleOptionClick2("<=")}>
-                      &lt;=
-                    </Dropdown.Item>
+                    {Object.keys(res).map((property) => (
+                      <Dropdown.Item
+                        onClick={() => handleOptionClick(res[property])}
+                      >
+                        {res[property]}
+                      </Dropdown.Item>
+                    ))}
                   </>
-                )}
-              </Dropdown.Menu>
-            </Dropdown>
+                );
+              })}
+            </Dropdown.Menu>
+          </Dropdown>
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              {nombre2}
+            </Dropdown.Toggle>
 
-            <Dropdown>
-              <Dropdown.Toggle variant="success" id="dropdown-basic">
-                {nombre3}
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                {recordset2.map((row) => {
-                  return (
-                    <>
-                      {Object.keys(row).map((property) => (
-                        <Dropdown.Item
-                          onClick={() => handleOptionClick3(row[property])}
-                        >
-                          {row[property]}
-                        </Dropdown.Item>
-                      ))}
-                    </>
-                  );
-                })}
-              </Dropdown.Menu>
-            </Dropdown>
-          </div>
+            <Dropdown.Menu>
+              <Dropdown.Item onClick={() => handleOptionClick2("=")}>
+                =
+              </Dropdown.Item>
+              {(nombre === "Id_Candidates" ||
+                nombre === "Genus_Ver_Candidates") && (
+                <>
+                  <Dropdown.Item onClick={() => handleOptionClick2(">")}>
+                    &gt;
+                  </Dropdown.Item>
+                  <Dropdown.Item onClick={() => handleOptionClick2("<")}>
+                    &lt;
+                  </Dropdown.Item>
+                  <Dropdown.Item onClick={() => handleOptionClick2(">=")}>
+                    &gt;=
+                  </Dropdown.Item>
+                  <Dropdown.Item onClick={() => handleOptionClick2("<=")}>
+                    &lt;=
+                  </Dropdown.Item>
+                </>
+              )}
+            </Dropdown.Menu>
+          </Dropdown>
 
-          <button
-            onClick={() => {
-              setConc(nombre + " " + nombre2);
-              addItem();
-            }}
-          >
-            Add
-          </button>
-          <ExportExcel
-            dataSource={recordset3}
-            fileName={"Export"}
-            buttonName={"Export To Excel"}
-          />
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              {nombre3}
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              {recordset2.map((row) => {
+                return (
+                  <>
+                    {Object.keys(row).map((property) => (
+                      <Dropdown.Item
+                        onClick={() => handleOptionClick3(row[property])}
+                      >
+                        {row[property]}
+                      </Dropdown.Item>
+                    ))}
+                  </>
+                );
+              })}
+            </Dropdown.Menu>
+          </Dropdown>
         </div>
 
-        <ul>
-          {items.map((item) => {
-            return (
-              <div>
-                <li key={item.id} onClick={() => setShowEdit(item.id)}>
-                  {item.value}
-                  <button
-                    className="delete-button"
-                    onClick={() => deleteItem(item.id)}
-                  >
-                    ❌
-                  </button>
-                </li>
-              </div>
-            );
-          })}
-        </ul>
-
-        <button onClick={() => getData3()}>Submit</button>
-
-        <>
-          <table>
-            {" "}
-            <tbody>
-              {" "}
-              {recordset3.map((row) => {
-                return (
-                  <tr key={row.id} className="table-rows">
-                    {" "}
-                    {Object.keys(row).map((property) => (
-                      <td key={property}>{row[property]}</td>
-                    ))}{" "}
-                  </tr>
-                );
-              })}{" "}
-            </tbody>{" "}
-          </table>{" "}
-        </>
+        <button
+          onClick={() => {
+            setConc(nombre + " " + nombre2);
+            addItem();
+          }}
+        >
+          Add
+        </button>
+        <ExportExcel
+          dataSource={recordset3}
+          fileName={"Export"}
+          buttonName={"Export To Excel"}
+        />
       </div>
-    );
-  };
+
+      <ul>
+        {items.map((item) => {
+          return (
+            <div>
+              <li key={item.id} onClick={() => setShowEdit(item.id)}>
+                {item.value}
+                <button
+                  className="delete-button"
+                  onClick={() => deleteItem(item.id)}
+                >
+                  ❌
+                </button>
+              </li>
+            </div>
+          );
+        })}
+      </ul>
+
+      <button onClick={() => getData3()}>Submit</button>
+
+      <>
+        <table>
+          {" "}
+          <tbody>
+            {" "}
+            {recordset3.map((row) => {
+              return (
+                <tr key={row.id} className="table-rows">
+                  {" "}
+                  {Object.keys(row).map((property) => (
+                    <td key={property}>{row[property]}</td>
+                  ))}{" "}
+                </tr>
+              );
+            })}{" "}
+          </tbody>{" "}
+        </table>{" "}
+      </>
+    </div>
+  );
 }
 
 export default M;
