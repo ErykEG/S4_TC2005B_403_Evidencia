@@ -1,6 +1,6 @@
 import "../Components/Styles/candidates.css";
 import { useEffect, useState } from "react";
-import M from "./M.js"
+import M from "./M.js";
 
 function Candidates() {
   const [data, setData] = useState([]);
