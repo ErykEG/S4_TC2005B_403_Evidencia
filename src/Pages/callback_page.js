@@ -7,11 +7,10 @@ import { useState, useEffect } from "react";
 function CallbackPage() {
   const { user } = useAuth0();
   const [isAssigned, setIsAssigned] = useState(false);
+  const userRoles = user?.[`${process.env.REACT_APP_AUTH0_NAMESPACE}`] ?? [];
+  setIsAssigned(userRoles[0] !== "Unassigned");
 
-  useEffect(() => {
-    const userRoles = user?.[`${process.env.REACT_APP_AUTH0_NAMESPACE}`] ?? [];
-    setIsAssigned(userRoles[1] !== undefined);
-  }, [user, isAssigned]);
+  useEffect(() => {}, [user, isAssigned]);
 
   if (user && !user.email_verified) {
     return (
@@ -22,14 +21,11 @@ function CallbackPage() {
         />
       </div>
     );
-  } else if (user && !isAssigned) {
+  }
+
+  if (!isAssigned) {
     return (
-      <div>
-        <RedirectLogin
-          mensaje="Please ask to be assigned a valid role. Redirecting to main page in 5
-          seconds..."
-        />
-      </div>
+      <div>"Please ask to be assigned a valid role and refresh the page."</div>
     );
   }
 
