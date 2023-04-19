@@ -23,7 +23,7 @@ function CallbackPage() {
       </div>
     );
   }
-  if (!isAssigned) {
+  if (user && !isAssigned) {
     return (
       <div>
         <RedirectLogin
