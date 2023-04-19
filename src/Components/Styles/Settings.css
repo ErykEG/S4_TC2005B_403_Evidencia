@@ -1,25 +1,22 @@
 .settings-panel {
-<<<<<<< HEAD
   position: relative;
   background-color: #303446;
   margin-left: 5rem;
   width: 20rem;
   height: 42rem;
-=======
-  position:relative;
+
+  position: relative;
   display: grid;
   background-color: #303446;
   margin-left: 5rem;
   /* height: 42rem; */
   height: calc(100vh - 15rem);
   /* height: 100vh; */
->>>>>>> 0700eea17bd62b3eecb2c738f6d47abc2b515f7a
   text-align: left;
   font-size: 1rem;
   display: grid;
   grid-template-columns: auto auto;
   gap: 0px;
-
 }
 
 .settings-panel button {
@@ -38,14 +35,15 @@
   margin-bottom: 0.75rem;
 }
 
-.admin-settings, .normal-settings{
+.admin-settings,
+.normal-settings {
   grid-column-start: 1;
   grid-column-end: 1;
   width: 20rem;
   border-right: 1px solid #c6d0f5;
 }
 
-.settings-details{
+.settings-details {
   text-align: left;
   grid-column-start: 2;
   grid-column-end: 7;

@@ -23,7 +23,10 @@ function Profile() {
         <div id="user-details">
           <p className="profile">Email: {user.email}</p>
           <p className="profile">Rol: {String(userRoles)}</p>
-          <p className="profile"> My Projects : </p>
+          <p className="profile" id="underline">
+            {" "}
+            My Projects :{" "}
+          </p>
           <p className="profile"> Languages : Spanish, English</p>
           <p className="profile"> Seniority: 3</p>
         </div>

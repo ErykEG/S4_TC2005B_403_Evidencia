@@ -16,8 +16,12 @@ img {
 }
 
 #logout-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    margin: 10px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  margin: 10px;
+}
+
+#underline {
+  text-decoration: underline;
 }
