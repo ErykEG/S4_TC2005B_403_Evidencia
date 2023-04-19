@@ -44,7 +44,7 @@ function App() {
   return (
     <React.Fragment>
       <div className="all-app">
-        {isAuthenticated && <RsideNav /> && isAssigned}
+        {isAuthenticated && <RsideNav /> && !isAssigned}
         <div className="main-content" style={{ minHeight: "100vh" }}>
           <Routes>
             <Route path="/" element={<HomePage />} />
