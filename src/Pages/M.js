@@ -78,11 +78,13 @@ function M() {
   const handleOptionClick = (option) => {
     console.log(`Option ${option} clicked`);
     setNombre(option);
+    getData2();
   };
 
   const handleOptionClick2 = (option) => {
     console.log(`Option ${option} clicked`);
     setNombre2(option);
+    getData2();
   };
 
   const handleOptionClick3 = (option) => {
