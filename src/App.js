@@ -8,7 +8,6 @@ import NotFoundPage from "./Pages/not_found_page";
 import Profile from "./Pages/profile_page";
 import Candidates from "./Pages/candidates";
 import Settings from "./Pages/settings.js";
-import RedirectLogin from "./Components/Redirect_Login";
 
 // Components
 import { AuthenticationGuard } from "./Components/Authentication_Guard";
@@ -27,7 +26,7 @@ function App() {
   const { user, isAuthenticated, isLoading, getAccessTokenSilently } =
     useAuth0();
 
-    const [isAssigned, setIsAssigned] = useState(false);
+  const [isAssigned, setIsAssigned] = useState(false);
 
   useEffect(() => {
     const userRoles = user?.[`${process.env.REACT_APP_AUTH0_NAMESPACE}`] ?? [];

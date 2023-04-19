@@ -4,7 +4,8 @@
   margin-left: 5rem;
   width: 20rem;
   /* height: 42rem; */
-  height: calc(100vh - 14rem);
+  height: calc(100vh - 15rem);
+  /* height: 100vh; */
   text-align: left;
   border-right: 1px solid #c6d0f5;
   font-size: 1rem;
