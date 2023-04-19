@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import RedirectLogin from "../Components/Redirect_Login";
-import Logout from "../Components/Logout";
-import "../App.css";
-// import { use } from "chai";
+import { useState, useEffect } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "../Components/Styles/Proyect.css";
+import { NextArrow, PrevArrow } from "../Components/Styles/arrows.js";
 
 function Proyect() {
   const { user } = useAuth0();
@@ -16,7 +18,59 @@ function Proyect() {
     setIsAdmin(userRoles.includes("Super-Manager"));
   }, [user]);
 
-  return <div className="proyect-panel">{isAdmin > <h3>My Proyects</h3>}</div>;
+  const carouselSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    appendDots: (dots) => (
+      <div
+        style={{
+          position: "absolute",
+          right: 20,
+          top: "50%",
+          transform: "translateY(-50%)",
+        }}
+      >
+        <ul style={{ margin: "0px" }}> {dots} </ul>
+      </div>
+    ),
+  };
+
+  return (
+    <div className="settings-panel">
+      {isAdmin ? (
+        <div className="admin-settings" style={{ height: "100%" }}>
+          <h3>Project Page</h3>
+          <button>Configuracion de la cuenta</button>
+          <button>Preferencias del usuario</button>
+          <button>Importar base de Datos</button>
+          <div className="carousel-box">
+            <Slider {...carouselSettings}>
+              <div>
+                <img src="https://via.placeholder.com/500x200" alt="slide 1" />
+              </div>
+              <div>
+                <img src="https://via.placeholder.com/500x200" alt="slide 2" />
+              </div>
+              <div>
+                <img src="https://via.placeholder.com/500x200" alt="slide 3" />
+              </div>
+            </Slider>
+          </div>
+        </div>
+      ) : (
+        <div className="normal-settings" style={{ height: "100%" }}>
+          <h3>Settings</h3>
+          <button>Configuracion de la cuenta</button>
+          <button>Preferencias del usuario</button>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default Proyect;
