@@ -17,7 +17,7 @@ function Profile() {
   return (
     isAuthenticated && (
       <div>
-        <img src={user.picture} alt={user.name} />
+        <img className="profilepicture" src={user.picture} alt={user.name} />
         <h2 className="profile">{user.name}</h2>
         <br></br>
         <div id="user-details">

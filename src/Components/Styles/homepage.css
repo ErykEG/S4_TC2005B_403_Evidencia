@@ -1,0 +1,32 @@
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
+
+.homepagecard {
+    background-color: #232634;
+    color: black;
+    width: 20%;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 2px solid #babbf1;
+  }
+
+.homepagecard h3{
+    font-size: 2rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #f2d5cf;
+  }
+
+h1{
+    padding-left: 36px;
+}
