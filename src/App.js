@@ -2,7 +2,7 @@ import "./App.css";
 import React from "react";
 import { useState, useEffect } from "react";
 // Pages
-import HomePage from "./Pages/home_page";
+import InicialPage from "./Pages/InicialPage";
 import CallbackPage from "./Pages/callback_page";
 import NotFoundPage from "./Pages/not_found_page";
 import Profile from "./Pages/profile_page";
@@ -47,7 +47,7 @@ function App() {
         {user && user.email_verified && isAssigned && <RsideNav />}
         <div className="main-content" style={{ minHeight: "100vh" }}>
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<InicialPage />} />
             <Route
               path="/profile"
               element={<AuthenticationGuard component={Profile} />}

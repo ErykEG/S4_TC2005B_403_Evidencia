@@ -3,9 +3,9 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Login from "../Components/Login";
 import Signup from "../Components/Signup";
 import NagLogo from "../Assets/Images/nagarro-logo.png";
-import "../Components/Styles/home_page.css";
+import "../Components/Styles/InicialPage.css";
 
-function HomePage() {
+function InicialPage() {
   const { isAuthenticated } = useAuth0();
 
   return (
@@ -36,4 +36,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default InicialPage;
