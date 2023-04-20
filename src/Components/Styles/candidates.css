@@ -1,11 +1,4 @@
-body {
-    background-color: #303446;
-}
-
-table {
+.candidates-app table{
     color: #c6d0f5;
-}
-
-.table-rows {
-    background-color: #414559;
+    background-color: #232634;
 }

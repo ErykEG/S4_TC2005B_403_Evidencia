@@ -129,7 +129,7 @@ function M() {
   };
 
   return (
-    <div className="app">
+    <div className="m-app">
       <h1>Lista de Reglas</h1>
       <div className="center">
         <div className="d-flex">

@@ -8,7 +8,7 @@ export default function Singnup() {
   return (
     <div>
       <button
-        className="button"
+        className="signup-button"
         onClick={() =>
           loginWithRedirect({ authorizationParams: { screen_hint: "signup" } })
         }

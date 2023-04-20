@@ -1,20 +1,28 @@
-.app {
+.m-app {
   text-align: center;
 }
 
-input {
+.m-app input {
   padding: 4px;
   margin-right: 8px;
 }
 
 
-ul {
+.m-app ul {
   /* Remove bullet point  */
   list-style: none;
 }
 
-li {
+.m-app li {
   margin: 12px 0;
+}
+
+.m-app table{
+  color: #c6d0f5;
+}
+
+.m-app tr{
+  background-color:#232634;
 }
 
 .delete-button {

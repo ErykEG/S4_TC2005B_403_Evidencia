@@ -2,7 +2,7 @@ import "../Components/Styles/homepage.css";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="homepage-content">
         <h1><i className="fa fa-fw fa-home" style={{ fontSize: '1.25em' }} /> Home Page</h1>
         <br></br>
 

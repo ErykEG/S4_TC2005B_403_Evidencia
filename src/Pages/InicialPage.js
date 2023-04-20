@@ -9,8 +9,8 @@ function InicialPage() {
   const { isAuthenticated } = useAuth0();
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="InicialPage">
+      <header className="InicialPage-header">
         {isAuthenticated ? (
           <div></div>
         ) : (

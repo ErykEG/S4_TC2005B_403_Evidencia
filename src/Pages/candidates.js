@@ -19,7 +19,7 @@ function Candidates() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="candidates-app">
       <M />
     </div>
   );
