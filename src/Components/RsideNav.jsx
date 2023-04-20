@@ -15,6 +15,14 @@ function RsideNav() {
         >
             <SideNav.Toggle />
             <SideNav.Nav defaultSelected="home">
+            <NavItem eventKey="home">
+                    <NavIcon>
+                        <i className="fa fa-fw fa-home" style={{ fontSize: '1.25em' }} />
+                    </NavIcon>
+                    <NavText>
+                        Home
+                    </NavText>
+                </NavItem>
                 <NavItem eventKey="profile">
                     <NavIcon>
                         <i className="fa fa-fw fa-user" style={{ fontSize: '1.25em' }} />

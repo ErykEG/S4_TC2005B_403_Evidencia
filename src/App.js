@@ -21,6 +21,7 @@ import RsideNav from "./Components/RsideNav";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import Proyect from "./Pages/proyect_page.js";
+import HomePage from "./Pages/homepage";
 
 function App() {
   const { user, isAuthenticated, isLoading, getAccessTokenSilently } =
@@ -48,6 +49,10 @@ function App() {
         <div className="main-content" style={{ minHeight: "100vh" }}>
           <Routes>
             <Route path="/" element={<InicialPage />} />
+            <Route
+              path="/home"
+              element={<AuthenticationGuard component={HomePage} />}
+            />
             <Route
               path="/profile"
               element={<AuthenticationGuard component={Profile} />}

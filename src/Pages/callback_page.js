@@ -3,6 +3,8 @@ import NavBar from "../Components/Nav_Bar";
 import { useAuth0 } from "@auth0/auth0-react";
 import RedirectLogin from "../Components/Redirect_Login";
 import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes, useNavigate, Link } from "react-router-dom";
+import HomePage from "./homepage";
 
 function CallbackPage() {
   const { user } = useAuth0();
@@ -33,7 +35,7 @@ function CallbackPage() {
   return (
     <div className="page-layout">
       <div className="page-layout__content">
-        <p>Yipee</p>
+        <p>hola</p>
       </div>
     </div>
   );
