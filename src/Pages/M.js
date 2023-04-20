@@ -1,8 +1,10 @@
-import axios from 'axios';
+import axios from "axios";
 import { useEffect, useState } from "react";
 import "../Components/Styles/m.css";
-import { Dropdown } from 'react-bootstrap';
-import React from 'react';
+import { Dropdown } from "react-bootstrap";
+import React from "react";
+import { ExportExcel } from "../Components/ExportExcel.jsx";
+import ExcelFileUpload from "../Components/ImportExcel.jsx";
 
 function M() {
   const [data, setData] = useState([]);
@@ -12,10 +14,7 @@ function M() {
   // El fetch retorna una promesa, y convertirlo a .json es otra operación asyncrona.
   // Por esa rason tenemos 2 awaits.
 
-
   const [recordset2, setRecordset2] = useState([]);
-
-
 
   const [conc, setConc] = useState("");
   const [items, setItems] = useState([]);
@@ -25,25 +24,18 @@ function M() {
   const [nombre2, setNombre2] = useState("Operation");
   const [nombre3, setNombre3] = useState("Value");
 
-
   async function getData() {
-    let res = await fetch("http://localhost:5001/api/matches/gc");
+    let res = await fetch("https://edbapi.azurewebsites.net//api/matches/gc");
     let dataJson = await res.json();
-    console.log(dataJson)
+    console.log(dataJson);
     setData(dataJson);
   }
-
-
 
   useEffect(() => {
     getData();
     setConc(`${nombre} ${nombre2} '${nombre3}'`);
     getData2();
   }, [nombre, nombre2, nombre3]);
-
-
-
-
 
   function addItem() {
     if (!conc) {
@@ -61,6 +53,7 @@ function M() {
     };
 
     setItems((oldList) => [...oldList, item]);
+    getData2();
   }
 
   function deleteItem(id) {
@@ -85,126 +78,146 @@ function M() {
   const handleOptionClick = (option) => {
     console.log(`Option ${option} clicked`);
     setNombre(option);
+    getData2();
   };
-
 
   const handleOptionClick2 = (option) => {
     console.log(`Option ${option} clicked`);
     setNombre2(option);
+    getData2();
   };
-  
+
   const handleOptionClick3 = (option) => {
     console.log(`Option ${option} clicked`);
     setNombre3(option);
   };
 
-
-
   const getData2 = async () => {
     try {
       setVar(nombre);
-      const response = await axios.post("http://localhost:5001/api/matches/q2", { variable });
+      const response = await axios.post(
+        "https://edbapi.azurewebsites.net//api/matches/q2",
+        { variable }
+      );
       setRecordset2(response.data);
-      console.log(recordset2)
+      console.log(recordset2);
     } catch (error) {
       console.error(error);
     }
-  }
-
-
-
-
-
+  };
 
   //Search
-
-
 
   const [recordset3, setRecordset3] = useState([]);
 
   const getData3 = async () => {
     let variable2 = "";
-    items.forEach(element => {
-      variable2= variable2 + " and " + element.value;
+    items.forEach((element) => {
+      variable2 = variable2 + " and " + element.value;
     });
     console.log("Log: " + variable2);
     try {
-      const response = await axios.post("http://localhost:5001/api/matches/q1", { variable2 });
+      const response = await axios.post(
+        "https://edbapi.azurewebsites.net//api/matches/q1",
+        { variable2 }
+      );
       setRecordset3(response.data);
     } catch (error) {
       console.error(error);
     }
-  }
-
-
-
+    getData2();
+  };
 
   return (
     <div className="app">
       <h1>Lista de Reglas</h1>
-      <div className='center'>
-      <div className='d-flex'>
-        <Dropdown>
-          <Dropdown.Toggle variant="success" id="dropdown-basic">
-            {nombre}
-          </Dropdown.Toggle>
+      <div className="center">
+        <div className="d-flex">
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              {nombre}
+            </Dropdown.Toggle>
 
-          <Dropdown.Menu>
-  {data.map((res) => {
-    return (
-      <>
-        {Object.keys(res).map((property) => (
-          <Dropdown.Item onClick={() => handleOptionClick(res[property])}>{res[property]}</Dropdown.Item>
-        ))}
-      </>
-    );
-  })}
-</Dropdown.Menu>
-        </Dropdown>
-        <Dropdown>
-          <Dropdown.Toggle variant="success" id="dropdown-basic">
-            {nombre2}
-          </Dropdown.Toggle>
+            <Dropdown.Menu>
+              {data.map((res) => {
+                return (
+                  <>
+                    {Object.keys(res).map((property) => (
+                      <Dropdown.Item
+                        onClick={() => handleOptionClick(res[property])}
+                      >
+                        {res[property]}
+                      </Dropdown.Item>
+                    ))}
+                  </>
+                );
+              })}
+            </Dropdown.Menu>
+          </Dropdown>
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              {nombre2}
+            </Dropdown.Toggle>
 
-          <Dropdown.Menu>
+            <Dropdown.Menu>
+              <Dropdown.Item onClick={() => handleOptionClick2("=")}>
+                =
+              </Dropdown.Item>
+              {(nombre === "Id_Candidates" ||
+                nombre === "Genus_Ver_Candidates") && (
+                <>
+                  <Dropdown.Item onClick={() => handleOptionClick2(">")}>
+                    &gt;
+                  </Dropdown.Item>
+                  <Dropdown.Item onClick={() => handleOptionClick2("<")}>
+                    &lt;
+                  </Dropdown.Item>
+                  <Dropdown.Item onClick={() => handleOptionClick2(">=")}>
+                    &gt;=
+                  </Dropdown.Item>
+                  <Dropdown.Item onClick={() => handleOptionClick2("<=")}>
+                    &lt;=
+                  </Dropdown.Item>
+                </>
+              )}
+            </Dropdown.Menu>
+          </Dropdown>
 
-          <Dropdown.Item onClick={() => handleOptionClick2("=")}>=</Dropdown.Item>
-          {(nombre === 'Id_Candidates' || nombre === 'Genus_Ver_Candidates') && (
-            <>
-          <Dropdown.Item onClick={() => handleOptionClick2(">")}>&gt;</Dropdown.Item> 
-          <Dropdown.Item onClick={() => handleOptionClick2("<")}>&lt;</Dropdown.Item> 
-          <Dropdown.Item onClick={() => handleOptionClick2(">=")}>&gt;=</Dropdown.Item> 
-          <Dropdown.Item onClick={() => handleOptionClick2("<=")}>&lt;=</Dropdown.Item> 
-          </>
-          )}
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              {nombre3}
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              {recordset2.map((row) => {
+                return (
+                  <>
+                    {Object.keys(row).map((property) => (
+                      <Dropdown.Item
+                        onClick={() => handleOptionClick3(row[property])}
+                      >
+                        {row[property]}
+                      </Dropdown.Item>
+                    ))}
+                  </>
+                );
+              })}
+            </Dropdown.Menu>
+          </Dropdown>
+        </div>
 
-</Dropdown.Menu>
-        </Dropdown>
-
-
-        <Dropdown>
-          <Dropdown.Toggle variant="success" id="dropdown-basic">
-            {nombre3}
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-          {recordset2.map((row) => {
-    return (
-      <>
-        {Object.keys(row).map((property) => (
-          <Dropdown.Item onClick={() => handleOptionClick3(row[property])}>{row[property]}</Dropdown.Item>
-        ))}
-      </>
-    );
-
-  })}
-</Dropdown.Menu>
-        </Dropdown>
-
-
-      </div>
-
-      <button onClick={() => {setConc(nombre + " " + nombre2); addItem();}}>Add</button>
-
+        <button
+          onClick={() => {
+            setConc(nombre + " " + nombre2);
+            addItem();
+          }}
+        >
+          Add
+        </button>
+        <ExportExcel
+          dataSource={recordset3}
+          fileName={"Export"}
+          buttonName={"Export To Excel"}
+        />
       </div>
 
       <ul>
@@ -225,11 +238,10 @@ function M() {
         })}
       </ul>
 
-      <button onClick={()=>getData3()}>Submit</button>
+      <button onClick={() => getData3()}>Submit</button>
 
       <>
-
-      <table>
+        <table>
           {" "}
           <tbody>
             {" "}
@@ -245,14 +257,9 @@ function M() {
             })}{" "}
           </tbody>{" "}
         </table>{" "}
-    </>
-
-      
+      </>
     </div>
   );
 }
 
 export default M;
-
-
-

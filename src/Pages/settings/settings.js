@@ -47,11 +47,7 @@ function Settings() {
           <button>Registro de proyectos</button>
           <button>Condiguración de reglas y filtros</button>
           <ExcelFileUpload />
-          <ExportExcel
-            dataSource={"https://edbapi.azurewebsites.net/api/stack"}
-            fileName={"Export Stack"}
-            buttonName={"Export Stack"}
-          />
+          
         </div>
       ) : (
         <div className="normal-settings">

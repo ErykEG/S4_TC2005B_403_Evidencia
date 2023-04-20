@@ -8,18 +8,8 @@ export const ExportExcel = ({ dataSource, fileName, buttonName }) => {
   const [Data, setData] = useState([]);
 
   useEffect(() => {
-    if (typeof dataSource === "string") {
-      getData();
-    } else {
-      setData(dataSource);
-    }
+    setData(dataSource);
   }, []);
-
-  async function getData() {
-    let res = await fetch(dataSource);
-    let dataJson = await res.json();
-    setData(dataJson);
-  }
 
   // Excel Export
   const fileType =
