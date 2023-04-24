@@ -45,7 +45,10 @@ function App() {
   return (
     <React.Fragment>
       <div className="all-app">
-        {user && user.email_verified && isAssigned && <RsideNav />}
+        <div className="nav-bar">
+          {user && user.email_verified && isAssigned && <RsideNav />}
+        </div>
+        
         <div className="main-content" style={{ minHeight: "100vh" }}>
           <Routes>
             <Route path="/" element={<InicialPage />} />
