@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../Components/Styles/Proyect.css";
 import { NextArrow, PrevArrow } from "../Components/Styles/arrows.js";
+import { useNavigate, Link } from "react-router-dom";
 
 function Proyect() {
   const { user } = useAuth0();
@@ -45,7 +46,9 @@ function Proyect() {
       {isAdmin ? (
         <div className="admin-settings" style={{ height: "100%" }}>
           <h3>Project Page</h3>
-          <button>Configuracion de la cuenta</button>
+          <Link to="/profile" className="link">
+            Configuración de la cuenta
+          </Link>
           <button>Preferencias del usuario</button>
           <button>Importar base de Datos</button>
           <div className="carousel-box">

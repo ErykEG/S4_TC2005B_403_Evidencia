@@ -1,4 +1,3 @@
-
 .card-container {
   display: flex;
   flex-direction: row;
@@ -6,27 +5,34 @@
   justify-content: space-around;
   align-items: center;
   align-content: center;
+  text-decoration-color: white;
 }
 
 .homepagecard {
-    background-color: #232634;
-    color: black;
-    width: 20%;
-    margin: 10px;
-    text-align: center;
-    line-height: 75px;
-    font-size: 1rem;
-    border-radius: 10px;
-    border: 2px solid #babbf1;
-  }
+  background-color: #232634;
+  color: black;
+  width: 20%;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 2px solid #babbf1;
+  text-decoration-color: white;
+}
 
-.homepagecard h3{
-    font-size: 2rem;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    color: #f2d5cf;
-  }
+.homepagecard h3 {
+  font-size: 2rem;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #f2d5cf;
+}
 
-.homepage-content h1{
-    padding-left: 36px;
+.homepage-content h1 {
+  padding-left: 36px;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
 }

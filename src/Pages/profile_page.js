@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import Logout from "../Components/Logout";
 import "../Components/Styles/profile_page.css";
+import { useNavigate, Link } from "react-router-dom";
 
 function Profile() {
   const { user, isAuthenticated, isLoading, getAccessTokenSilently } =
@@ -24,8 +25,10 @@ function Profile() {
           <p className="profile">Email: {user.email}</p>
           <p className="profile">Rol: {String(userRoles)}</p>
           <p className="profile" id="underline">
-            {" "}
-            My Projects :{" "}
+            <Link to="/proyects" className="link">
+              {" "}
+              My Projects :{" "}
+            </Link>
           </p>
           <p className="profile"> Languages : Spanish, English</p>
           <p className="profile"> Seniority: 3</p>
