@@ -5,12 +5,6 @@ import XLSX from "sheetjs-style";
 import "./Styles/exportExcel.css";
 
 export const ExportExcel = ({ dataSource, fileName, buttonName }) => {
-  const [Data, setData] = useState([]);
-
-  useEffect(() => {
-    setData(dataSource);
-  }, []);
-
   // Excel Export
   const fileType =
     "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8";
@@ -25,7 +19,11 @@ export const ExportExcel = ({ dataSource, fileName, buttonName }) => {
   };
 
   return (
-    <button onClick={(e) => exportToCSV(Data, fileName)}>{buttonName}</button>
+    <button onClick={() => exportToCSV(dataSource, fileName)}>
+      {buttonName}
+      {console.log("break")}
+      {console.log(dataSource)}
+    </button>
   );
 
   {
