@@ -51,7 +51,7 @@ function App() {
         
         <div className="main-content" style={{ minHeight: "100vh" }}>
           <Routes>
-            <Route path="/" element={<InicialPage />} />
+            <Route  path="/" element={<InicialPage />} />
             <Route
               path="/home"
               element={<AuthenticationGuard component={HomePage} />}
