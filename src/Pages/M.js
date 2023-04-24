@@ -5,6 +5,7 @@ import { Dropdown } from "react-bootstrap";
 import React from "react";
 import { ExportExcel } from "../Components/ExportExcel.jsx";
 import ExcelFileUpload from "../Components/ImportExcel.jsx";
+import Modal from "react-modal";
 
 function M() {
   const [data, setData] = useState([]);
@@ -74,6 +75,16 @@ function M() {
     setUpdatedText("");
     setShowEdit(-1);
   }
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalIsOpen(false);
+  };
 
   const handleOptionClick = (option) => {
     console.log(`Option ${option} clicked`);
@@ -220,6 +231,11 @@ function M() {
         />
       </div>
 
+
+
+
+
+
       <ul>
         {items.map((item) => {
           return (
@@ -240,6 +256,7 @@ function M() {
 
       <button onClick={() => getData3()}>Submit</button>
 
+
       <>
         <table>
           {" "}
@@ -252,6 +269,35 @@ function M() {
                   {Object.keys(row).map((property) => (
                     <td key={property}>{row[property]}</td>
                   ))}{" "}
+                                      <td><button onClick={handleOpenModal}>Add to Project</button></td>
+                                      <Modal isOpen={modalIsOpen}>
+                                        <div style={{marginLeft: '5%'}}>
+                                        <h2>Into which project?</h2>
+                                        <div style={{ maxHeight: '300px', overflowY: 'auto' }}>
+                                        <table style={{ width: '100%' }}>
+                                          <tbody>
+                                            {data.map((res) => (
+                                              <tr>
+                                                {Object.keys(res).map((property) => (
+                                                  <td style={{ padding: '10px' }}>{res[property]}</td>
+                                                ))}
+                                              </tr>
+                                            ))}
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                      <div style={{
+                                        marginTop: '10%',
+                                        marginLeft: '15%',
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center'
+                                      }}>
+                                        <button onClick={handleCloseModal}>Cancel</button>
+                                        <button onClick={handleCloseModal}>Continue</button>
+                                        </div>
+                                        </div>
+                                      </Modal>
                 </tr>
               );
             })}{" "}
