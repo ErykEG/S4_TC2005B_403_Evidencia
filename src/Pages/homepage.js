@@ -13,7 +13,7 @@ const HomePage = () => {
       <div className="card-container">
         <div className="homepagecard">
           <h3>
-            <Link to="/profile" className="link">
+            <Link to="/profile" className="homepagecard-titles">
               <i className="fa fa-fw fa-user" style={{ fontSize: "1.25em" }} />{" "}
               Profile
             </Link>
@@ -23,7 +23,7 @@ const HomePage = () => {
 
         <div className="homepagecard">
           <h3>
-            <Link to="/proyects" className="link">
+            <Link to="/proyects" className="homepagecard-titles">
               <i
                 className="fa fa-fw fa-folder"
                 style={{ fontSize: "1.25em" }}
@@ -36,7 +36,7 @@ const HomePage = () => {
 
         <div className="homepagecard">
           <h3>
-            <Link to="/candidates" className="link">
+            <Link to="/candidates" className="homepagecard-titles">
               <i
                 className="fa fa-fw fa-id-card"
                 style={{ fontSize: "1.25em" }}
@@ -49,7 +49,7 @@ const HomePage = () => {
 
         <div className="homepagecard">
           <h3>
-            <Link to="/settings" className="link">
+            <Link to="/settings" className="homepagecard-titles">
               <i className="fa fa-fw fa-gear" style={{ fontSize: "1.25em" }} />{" "}
               Settings
             </Link>
