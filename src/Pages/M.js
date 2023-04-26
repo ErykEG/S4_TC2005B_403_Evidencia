@@ -3,11 +3,19 @@ import { useEffect, useState } from "react";
 import "../Components/Styles/m.css";
 import { Dropdown } from "react-bootstrap";
 import React from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import { ExportExcel } from "../Components/ExportExcel.jsx";
 import ExcelFileUpload from "../Components/ImportExcel.jsx";
 import Modal from "react-modal";
 
 function M() {
+
+  const { user } =
+  useAuth0();
+  const userRoles = user?.[`${process.env.REACT_APP_AUTH0_NAMESPACE}`] ?? [];
+  console.log(user.email);
+
+
   const [data, setData] = useState([]);
   const [data2, setData2] = useState([]);
   const [variable, setVar] = useState([""]);
@@ -133,6 +141,24 @@ function M() {
         { variable2 }
       );
       setRecordset3(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+    getData2();
+    getData4();
+  };
+
+  const [recordset4, setRecordset4] = useState([]);
+
+  const getData4 = async () => {
+    let variable3 = user.email;
+    console.log("Log Num 4: " + variable3);
+    try {
+      const response = await axios.post(
+        "https://edbapi.azurewebsites.net//api/matches/q3",
+        { variable3 }
+      );
+      setRecordset4(response.data);
     } catch (error) {
       console.error(error);
     }
@@ -270,13 +296,13 @@ function M() {
                     <td key={property}>{row[property]}</td>
                   ))}{" "}
                                       <td><button onClick={handleOpenModal}>Add to Project</button></td>
-                                      <Modal isOpen={modalIsOpen}>
+                                      <Modal isOpen={modalIsOpen} style={{color: 'black'}}>
                                         <div style={{marginLeft: '5%'}}>
                                         <h2>Into which project?</h2>
                                         <div style={{ maxHeight: '300px', overflowY: 'auto' }}>
                                         <table style={{ width: '100%' }}>
                                           <tbody>
-                                            {data.map((res) => (
+                                            {recordset4.map((res) => (
                                               <tr>
                                                 {Object.keys(res).map((property) => (
                                                   <td style={{ padding: '10px' }}>{res[property]}</td>
