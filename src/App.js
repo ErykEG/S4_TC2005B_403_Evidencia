@@ -18,7 +18,12 @@ import PageLoader from "./Components/Page_Loader";
 import RsideNav from "./Components/RsideNav";
 
 // Modules
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import Proyect from "./Pages/proyect_page.js";
 import HomePage from "./Pages/homepage";
@@ -48,10 +53,10 @@ function App() {
         <div className="nav-bar">
           {user && user.email_verified && isAssigned && <RsideNav />}
         </div>
-        
+
         <div className="main-content" style={{ minHeight: "100vh" }}>
           <Routes>
-            <Route  path="/" element={<Navigate to="/home" />}/>
+            <Route path="/" element={<InicialPage />} />
             <Route
               path="/home"
               element={<AuthenticationGuard component={HomePage} />}
