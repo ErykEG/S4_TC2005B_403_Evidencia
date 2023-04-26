@@ -20,7 +20,7 @@ function Proyect() {
   }, [user]);
 
   const carouselSettings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -40,6 +40,23 @@ function Proyect() {
       </div>
     ),
   };
+  const projects = [
+    {
+      name: "Project 1",
+      description: "This is project 1",
+      link: "/project1",
+    },
+    {
+      name: "Project 2",
+      description: "This is project 2",
+      link: "/project2",
+    },
+    {
+      name: "Project 3",
+      description: "This is project 3",
+      link: "/project3",
+    },
+  ];
 
   return (
     <div className="settings-panel">
@@ -53,15 +70,15 @@ function Proyect() {
           <button>Importar base de Datos</button>
           <div className="carousel-box">
             <Slider {...carouselSettings}>
-              <div>
-                <img src="https://via.placeholder.com/500x200" alt="slide 1" />
-              </div>
-              <div>
-                <img src="https://via.placeholder.com/500x200" alt="slide 2" />
-              </div>
-              <div>
-                <img src="https://via.placeholder.com/500x200" alt="slide 3" />
-              </div>
+              {projects.map((project, index) => (
+                <div key={index}>
+                  <div className="homepagecard">
+                    <h3>{project.name}</h3>
+                    <p>{project.description}</p>
+                    <Link to={project.link}>View project</Link>
+                  </div>
+                </div>
+              ))}
             </Slider>
           </div>
         </div>
