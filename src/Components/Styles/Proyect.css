@@ -1,18 +1,50 @@
 .proyect-panel {
   position: relative;
   background-color: #303446;
-  margin-left: 5rem;
-  width: 20rem;
+  /* margin-left: 5rem; */
+  /* width: 20rem; */
   /* height: 42rem; */
-  height: 100%;
-  text-align: left;
-  border-right: 1px solid #c6d0f5;
+  /* height: 100%; */
+  text-align: center;
   font-size: 1rem;
 }
 
 .carousel-box {
-  width: 500px;
-  height: 200px;
+  width: 95%;
+  /* height: 40rem; */
   position: absolute;
-  left: 200%;
+  margin-left: 2.5%;
+  top: 20vh;
+}
+
+.project-card {
+  background-color: #232634;
+  color: black;
+  /* flex-basis: 35%; */
+  /* width: 20%; */
+  text-align: center;
+  line-height: 20vh;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 2px solid #babbf1;
+  text-decoration-color: white;
+  margin-bottom: 3rem;
+  margin-right: 3rem;
+}
+
+.project-card h3 {
+  font-size: 2rem;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #f2d5cf;
+}
+
+.homepage-content h1 {
+  /* padding-left: 36px; */
+  margin-bottom: 10vh;
+  text-align: center;
+}
+
+.project-title{
+  text-align: center;
 }

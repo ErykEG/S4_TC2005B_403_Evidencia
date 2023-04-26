@@ -17,20 +17,20 @@ function Profile() {
 
   return (
     isAuthenticated && (
-      <div>
-        <img className="profile" src={user.picture} alt={user.name} />
-        <h2 className="profile">{user.name}</h2>
+      <div className="profile-card">
+        <img src={user.picture} alt={user.name} />
+        <h2>{user.name}</h2>
         <br></br>
         <div id="user-details">
-          <p className="profile">Email: {user.email}</p>
-          <p className="profile">Rol: {String(userRoles[0])}</p>
+          <p><b>Email:</b> {user.email}</p>
+          <p><b>Role(s):</b> {String(userRoles[0])}</p>
           {/* <p className="profile">
             <Link to="/proyects" id="Link">
               {" "}
               My Projects{" "}
             </Link>
           </p> */}
-          <p className="profile"> Languages : Spanish, English</p>
+          <p className="profile"><b>Languages:</b> Spanish, English</p>
         </div>
         <div id="logout-button">
           <Logout />

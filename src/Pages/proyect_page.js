@@ -25,20 +25,11 @@ function Proyect() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    appendDots: (dots) => (
-      <div
-        style={{
-          position: "absolute",
-          right: 20,
-          top: "50%",
-          transform: "translateY(-50%)",
-        }}
-      >
-        <ul style={{ margin: "0px" }}> {dots} </ul>
-      </div>
-    ),
+    nextArrow: <NextArrow style={{ paddingRight: "20px" }} />, 
+    prevArrow: <PrevArrow style={{ paddingLeft: "20px" }} />, 
+    centerMode: true, 
+    centerPadding: "20%",
+ 
   };
   const projects = [
     {
@@ -59,20 +50,15 @@ function Proyect() {
   ];
 
   return (
-    <div className="settings-panel">
+    <div className="proyect-panel">
       {isAdmin ? (
-        <div className="admin-settings" style={{ height: "100%" }}>
-          <h3>Project Page</h3>
-          <Link to="/profile" className="link">
-            Configuración de la cuenta
-          </Link>
-          <button>Preferencias del usuario</button>
-          <button>Importar base de Datos</button>
+        <div>
+          <h1 className="project-title">My Projects</h1>
           <div className="carousel-box">
             <Slider {...carouselSettings}>
               {projects.map((project, index) => (
                 <div key={index}>
-                  <div className="homepagecard">
+                  <div className="project-card">
                     <h3>{project.name}</h3>
                     <p>{project.description}</p>
                     <Link to={project.link}>View project</Link>
