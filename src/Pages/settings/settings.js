@@ -39,13 +39,13 @@ function Settings() {
       {isAdmin ? (
         <div className="admin-settings">
           <h3>Settings</h3>
-          <button onClick={handleButtonClick("button1")}>Configuracion de la cuenta</button>
-          <button onClick={handleButtonClick("button2")}>Preferencias del usuario</button>
+          <button onClick={handleButtonClick("button1")}>Account Configuration</button>
+          <button onClick={handleButtonClick("button2")}>User Preferences</button>
           <h3 id="adminset">Admin Settings</h3>
-          <button>Mis proyectos</button>
-          <button>Registro de candidatos</button>
-          <button>Registro de proyectos</button>
-          <button>Condiguración de reglas y filtros</button>
+          <button>My Projects</button>
+          <button>Candidates Registration</button>
+          <button>Proyect Registration</button>
+          <button>Rules and Filters Configuration</button>
           <ExcelFileUpload />
           
         </div>

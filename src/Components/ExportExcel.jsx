@@ -19,7 +19,7 @@ export const ExportExcel = ({ dataSource, fileName, buttonName }) => {
   };
 
   return (
-    <button onClick={() => exportToCSV(dataSource, fileName)}>
+    <button className="m-exportbutton" onClick={() => exportToCSV(dataSource, fileName)}>
       {buttonName}
       {console.log("break")}
       {console.log(dataSource)}

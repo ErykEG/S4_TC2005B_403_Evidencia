@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "../Components/Styles/m.css";
-import { Dropdown } from "react-bootstrap";
+import { Dropdown, Button } from "react-bootstrap";
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { ExportExcel } from "../Components/ExportExcel.jsx";
@@ -165,13 +165,21 @@ function M() {
     getData2();
   };
 
+  const dropdownStyle = {
+    backgroundColor: '#000000',
+    color: '#FFFFFF',
+  };
+
+  //Botones Dropdown 
+  
   return (
     <div className="m-app">
-      <h1>Lista de Reglas</h1>
-      <div className="center">
-        <div className="d-flex">
-          <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
+      <h1>Candidates Page</h1>
+      <h3>Rules list</h3>
+      <div className="m-dropdowns-buttons">
+        <div className="m-dropdowns">
+          <Dropdown className="m-down" style={dropdownStyle}>
+            <Dropdown.Toggle size="md" variant="secondary" id="dropdown-basic">
               {nombre}
             </Dropdown.Toggle>
 
@@ -191,8 +199,8 @@ function M() {
               })}
             </Dropdown.Menu>
           </Dropdown>
-          <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
+          <Dropdown className="m-down">
+            <Dropdown.Toggle variant="secondary" id="dropdown-basic">
               {nombre2}
             </Dropdown.Toggle>
 
@@ -220,8 +228,8 @@ function M() {
             </Dropdown.Menu>
           </Dropdown>
 
-          <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
+          <Dropdown className="m-down">
+            <Dropdown.Toggle variant="secondary" id="dropdown-basic">
               {nombre3}
             </Dropdown.Toggle>
             <Dropdown.Menu>
@@ -240,27 +248,28 @@ function M() {
               })}
             </Dropdown.Menu>
           </Dropdown>
-        </div>
-
-        <button
+          <Button size="xs" className="m-addbutton" variant="outline-success" 
+            
           onClick={() => {
             setConc(nombre + " " + nombre2);
             addItem();
-          }}
-        >
-          Add
-        </button>
+            }}
+          >
+            Add
+          </Button>
+        </div>
+        <div className="m-buttons">
+        
+
+
         <ExportExcel
+          className="m-exportbutton"
           dataSource={recordset3}
           fileName={"Export"}
           buttonName={"Export To Excel"}
         />
+          </div>  
       </div>
-
-
-
-
-
 
       <ul>
         {items.map((item) => {
@@ -280,7 +289,7 @@ function M() {
         })}
       </ul>
 
-      <button onClick={() => getData3()}>Submit</button>
+      <button className="m-submit-button" onClick={() => getData3()}>Submit</button>
 
 
       <>
@@ -295,35 +304,43 @@ function M() {
                   {Object.keys(row).map((property) => (
                     <td key={property}>{row[property]}</td>
                   ))}{" "}
-                                      <td><button onClick={handleOpenModal}>Add to Project</button></td>
-                                      <Modal isOpen={modalIsOpen} style={{color: 'black'}}>
-                                        <div style={{marginLeft: '5%'}}>
-                                        <h2>Into which project?</h2>
-                                        <div style={{ maxHeight: '300px', overflowY: 'auto' }}>
-                                        <table style={{ width: '100%' }}>
-                                          <tbody>
-                                            {recordset4.map((res) => (
-                                              <tr>
-                                                {Object.keys(res).map((property) => (
-                                                  <td style={{ padding: '10px' }}>{res[property]}</td>
-                                                ))}
-                                              </tr>
-                                            ))}
-                                          </tbody>
-                                        </table>
-                                      </div>
-                                      <div style={{
-                                        marginTop: '10%',
-                                        marginLeft: '15%',
-                                        display: 'flex',
-                                        justifyContent: 'center',
-                                        alignItems: 'center'
-                                      }}>
-                                        <button onClick={handleCloseModal}>Cancel</button>
-                                        <button onClick={handleCloseModal}>Continue</button>
-                                        </div>
-                                        </div>
-                                      </Modal>
+                  <td>
+                    <button className="add-project" onClick={handleOpenModal}>
+                      Add to Project
+                    </button>
+                  </td>
+                  <Modal isOpen={modalIsOpen} style={{ color: "black" }}>
+                    <div style={{ marginLeft: "5%" }}>
+                      <h2>Into which project?</h2>
+                      <div style={{ maxHeight: "300px", overflowY: "auto" }}>
+                        <table style={{ width: "100%" }}>
+                          <tbody>
+                            {recordset4.map((res) => (
+                              <tr>
+                                {Object.keys(res).map((property) => (
+                                  <td style={{ padding: "10px" }}>
+                                    {res[property]}
+                                  </td>
+                                ))}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                      <div
+                        style={{
+                          marginTop: "10%",
+                          marginLeft: "15%",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
+                      >
+                        <button onClick={handleCloseModal}>Cancel</button>
+                        <button onClick={handleCloseModal}>Continue</button>
+                      </div>
+                    </div>
+                  </Modal>
                 </tr>
               );
             })}{" "}
