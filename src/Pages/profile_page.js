@@ -23,15 +23,14 @@ function Profile() {
         <br></br>
         <div id="user-details">
           <p className="profile">Email: {user.email}</p>
-          <p className="profile">Rol: {String(userRoles)}</p>
-          <p className="profile" id="underline">
-            <Link to="/proyects" className="link">
+          <p className="profile">Rol: {String(userRoles[0])}</p>
+          {/* <p className="profile">
+            <Link to="/proyects" id="Link">
               {" "}
-              My Projects :{" "}
+              My Projects{" "}
             </Link>
-          </p>
+          </p> */}
           <p className="profile"> Languages : Spanish, English</p>
-          <p className="profile"> Seniority: 3</p>
         </div>
         <div id="logout-button">
           <Logout />

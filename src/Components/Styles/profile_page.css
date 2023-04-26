@@ -25,3 +25,8 @@
 #underline {
   text-decoration: underline;
 }
+
+.Link {
+  text-align: center;
+  color: #c6d0f5;
+}
