@@ -177,7 +177,6 @@ function M() {
   const [prid, setPrid] = useState("");
 
   const dropdownStyle = {
-    backgroundColor: "#000000",
     color: "#FFFFFF",
   };
 
