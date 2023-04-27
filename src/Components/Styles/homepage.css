@@ -22,21 +22,24 @@
   border-radius: 10px;
   border: 2px solid #babbf1;
   text-decoration-color: white;
-  padding-bottom: 1rem;
   margin-bottom: 3rem;
   margin-right: 3rem;
 }
 
+.homepagecard p{
+  color: #c6d0f5;
+}
+
 .homepagecard h3 {
   font-size: 2rem;
-  padding-top: 2rem;
-  padding-bottom: 1rem;
+  padding-top: 20px;
+  padding-bottom: 20px;
   color: #f2d5cf;
 }
 
 .homepage-content h1 {
   /* padding-left: 36px; */
-  margin-bottom: 10vh;
+  margin-bottom: 3%;
   text-align: center;
 }
 

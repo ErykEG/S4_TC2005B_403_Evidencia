@@ -30,7 +30,7 @@ function Profile() {
               My Projects{" "}
             </Link>
           </p> */}
-          <p className="profile"><b>Languages:</b> Spanish, English</p>
+          <p><b>Languages:</b> Spanish, English</p>
         </div>
         <div id="logout-button">
           <Logout />
