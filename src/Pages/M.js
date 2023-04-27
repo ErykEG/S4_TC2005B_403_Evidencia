@@ -187,6 +187,8 @@ function M() {
 
     console.log(expenseData);
 
+    handleCloseModal();
+
     };
 
   return (
@@ -345,9 +347,7 @@ function M() {
                                           <tbody>
                                             {recordset4.map((res) => (
                                               <tr>
-                                                {Object.keys(res).map((p) => (
-                                                  <td style={{ padding: '10px', alignItems: 'center' }}><button onClick={() => setPrid(res.Id_Projects_Short)} style={{textAlign: 'center'}}>{res[p]}</button></td>
-                                                ))}
+                                                  <td style={{ padding: '10px', alignItems: 'center' }}><button onClick={() => setPrid(res.Id_Projects_Short)} style={{textAlign: 'center'}}>{res.Name_Projects_Short}</button></td>
                                               </tr>
                                             ))}
                                           </tbody>
