@@ -1,0 +1,61 @@
+.about-app h1{
+    text-align: center;
+}
+
+.about-app h3{
+    text-align: center;
+    color: #f2d5cf;
+}
+
+.about-app p{
+    text-align: left;
+    line-height: 1.5rem;
+    color: #c6d0f5;
+}
+
+.about-flexbox{
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 3rem;
+
+}
+
+.about-card{
+    background-color: #232634;
+    color: black;
+    flex-basis: 35%;
+    /* width: 20%; */
+    text-align: center;
+    line-height: 75px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 2px solid #babbf1;
+    text-decoration-color: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-bottom: 3rem;
+    margin-right: 3rem;
+}
+
+.row-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 2rem;
+}
+
+.about-app-logo {
+    /* width: 200px; */
+    height: 2rem;
+}
+
+#about-app-icon{
+    height: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 1rem;
+}

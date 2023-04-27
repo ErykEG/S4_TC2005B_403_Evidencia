@@ -55,6 +55,14 @@ function RsideNav() {
                         Settings
                     </NavText>
                 </NavItem>
+                <NavItem eventKey="about-us">
+                    <NavIcon>
+                        <i className="fa-solid fa-circle-info" style={{ fontSize: '1.25em' }} />
+                    </NavIcon>
+                    <NavText>
+                        About Us
+                    </NavText>
+                </NavItem>
                 {/* <NavItem eventKey="charts">
                     <NavIcon>
                         <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />

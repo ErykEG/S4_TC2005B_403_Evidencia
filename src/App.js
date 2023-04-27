@@ -8,6 +8,7 @@ import NotFoundPage from "./Pages/not_found_page";
 import Profile from "./Pages/profile_page";
 import Candidates from "./Pages/candidates";
 import Settings from "./Pages/settings/settings.js";
+import About from "./Pages/aboutus.js";
 
 // Components
 import { AuthenticationGuard } from "./Components/Authentication_Guard";
@@ -77,6 +78,10 @@ function App() {
             <Route
               path="/settings"
               element={<AuthenticationGuard component={Settings} />}
+            />
+            <Route
+              path="/about-us"
+              element={<AuthenticationGuard component={About} />}
             />
             <Route path="/callback" element={<CallbackPage />} />
             <Route path="*" element={<NotFoundPage />} />
