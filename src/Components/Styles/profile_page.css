@@ -21,12 +21,12 @@
   margin-bottom: 10%;
   margin-left: 35%;
   margin-right: 35%;
-  padding-bottom: 5%;
-  padding-top: 5%;
+  padding-bottom: 3%;
+  padding-top: 3%;
 }
 
 .profile-card p{
-  line-height: 3rem;
+  line-height: 2rem;
   text-align: left;
   font-size: 1rem;
   padding-left: 2rem;
