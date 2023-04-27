@@ -7,25 +7,13 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { ExportExcel } from "../Components/ExportExcel.jsx";
 import ExcelFileUpload from "../Components/ImportExcel.jsx";
 import Modal from "react-modal";
-import Button from "react-bootstrap";
 
 function M() {
 
-
-  const [isAdmin, setIsAdmin] = useState(false);
-
   const { user } =
   useAuth0();
-  useEffect(() => {
-    const userRoles = user?.[`${process.env.REACT_APP_AUTH0_NAMESPACE}`] ?? [];
-    setIsAdmin(userRoles.includes("Super-Manager") || userRoles.includes("Manager"));
-  }, [user]);
-
-
-
-
-
-
+  const userRoles = user?.[`${process.env.REACT_APP_AUTH0_NAMESPACE}`] ?? [];
+  console.log(user.email);
 
 
   const [data, setData] = useState([]);
@@ -163,11 +151,7 @@ function M() {
   const [recordset4, setRecordset4] = useState([]);
 
   const getData4 = async () => {
-    let variable3 = 'pp';
-    console.log(isAdmin);
-    if(isAdmin){
-      variable3= '%';
-    } else {variable3 = user.email;}
+    let variable3 = user.email;
     console.log("Log Num 4: " + variable3);
     try {
       const response = await axios.post(
