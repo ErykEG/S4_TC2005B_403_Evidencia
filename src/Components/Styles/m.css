@@ -74,10 +74,10 @@
 
 .add-project {
   background-color: #232634;
-  border: 2px solid red;
+  border: 2px solid darkcyan;
   padding: 8px 16px;
   border-radius: 4px;
-  color: #e70606;
+  color: darkcyan;
 }
 
 .project-added {
