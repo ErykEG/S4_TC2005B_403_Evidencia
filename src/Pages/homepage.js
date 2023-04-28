@@ -18,7 +18,7 @@ const HomePage = () => {
               Profile
             </Link>
           </h3>
-          <p>Ver detalles del perfil</p>
+          <p>See Profile Details</p>
         </div>
 
         <div className="homepagecard">
@@ -31,7 +31,7 @@ const HomePage = () => {
               Proyects
             </Link>
           </h3>
-          <p>Los projectos a los que tienes acceso</p>
+          <p>Projects with Access</p>
         </div>
 
         <div className="homepagecard">
@@ -44,7 +44,7 @@ const HomePage = () => {
               Candidates
             </Link>
           </h3>
-          <p>Lista de candidatos</p>
+          <p>Candidate List</p>
         </div>
 
         <div className="homepagecard">
@@ -54,7 +54,7 @@ const HomePage = () => {
               Settings
             </Link>
           </h3>
-          <p>Configuración de la cuenta</p>
+          <p>Account Configuration</p>
         </div>
       </div>
     </div>
