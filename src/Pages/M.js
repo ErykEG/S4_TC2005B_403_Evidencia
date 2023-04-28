@@ -91,7 +91,7 @@ function M() {
 
   const [modalData, setModalData] = useState({ isOpen: false, id: null });
 
-  const handleOpenModal = (id) => {
+  const handleOpenModal = async (id) => {
     setModalData({ isOpen: true, id: id });
   };
 
@@ -213,7 +213,7 @@ function M() {
     });
 
     handleCloseModal();
-    refreshPage();
+    getData3();
   };
 
 
