@@ -7,6 +7,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { ExportExcel } from "../Components/ExportExcel.jsx";
 import ExcelFileUpload from "../Components/ImportExcel.jsx";
 import Modal from "react-modal";
+import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function M() {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -180,6 +182,11 @@ function M() {
     color: "#FFFFFF",
   };
 
+  const navigate = useNavigate();
+  const refreshPage = () => {
+        navigate(0);
+  }
+
   const submitHandler = () => {
     console.log(typeof modalData.id);
     console.log(typeof prid);
@@ -198,8 +205,19 @@ function M() {
 
     console.log(expenseData);
 
+    axios
+    .post("http://edbapi.azurewebsites.net//api/matches/q5", expenseData)
+    .then(function (response) {
+      console.log(response);
+      //props.onSaveExpenseData();
+    });
+
     handleCloseModal();
+    refreshPage();
   };
+
+
+
 
   return (
     <div className="m-app">
