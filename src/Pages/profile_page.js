@@ -11,7 +11,6 @@ function Profile() {
   if (isLoading) {
     return <div> Loading... </div>;
   }
-  console.log(user);
 
   const userRoles = user?.[`${process.env.REACT_APP_AUTH0_NAMESPACE}`] ?? [];
 
@@ -22,15 +21,12 @@ function Profile() {
         <h2>{user.name}</h2>
         <br></br>
         <div id="user-details">
-          <p><b>Email:</b> {user.email}</p>
-          <p><b>Role(s):</b> {String(userRoles[0])}</p>
-          {/* <p className="profile">
-            <Link to="/proyects" id="Link">
-              {" "}
-              My Projects{" "}
-            </Link>
-          </p> */}
-          <p><b>Languages:</b> Spanish, English</p>
+          <p>
+            <b>Email:</b> {user.email}
+          </p>
+          <p>
+            <b>Role(s):</b> {String(userRoles[0])}
+          </p>
         </div>
         <div id="logout-button">
           <Logout />

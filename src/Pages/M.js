@@ -333,12 +333,17 @@ function M() {
                     <td key={property}>{row[property]}</td>
                   ))}{" "}
                   <td key={row.Id_Candidates}>
-                    <button
-                      className="add-project"
-                      onClick={() => handleOpenModal(row.Id_Candidates)}
-                    >
-                      Add to Project
-                    </button>
+                    {row.Is_Assigned == "UNASSIGNED" && (
+                      <button
+                        className="add-project"
+                        onClick={() => handleOpenModal(row.Id_Candidates)}
+                      >
+                        Add to Project
+                      </button>
+                    )}
+                    {row.Is_Assigned == "ASSIGNED" && (
+                      <button className="project-added">Project Assigned</button>
+                    )}
                   </td>
                 </tr>
               );

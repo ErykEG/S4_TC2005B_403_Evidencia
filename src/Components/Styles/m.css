@@ -16,18 +16,17 @@
   margin: 12px 0;
 }
 
-.m-app table{
+.m-app table {
   color: #c6d0f5;
   width: 97%;
-  margin-left: 1.5%; 
+  margin-left: 1.5%;
 }
 
-
-.m-app tr{
-  background-color:#232634;
+.m-app tr {
+  background-color: #232634;
 }
 
-.m-dropdowns-buttons{
+.m-dropdowns-buttons {
   display: flex;
   /* justify-content: left; */
   /* margin-left: 2rem; */
@@ -41,23 +40,23 @@
   margin-left: 1.5rem;
 }
 
-.m-buttons{
+.m-buttons {
   flex: 3;
 }
 
 /* .m-addbutton{
 } */
 
-.m-down{
+.m-down {
   margin-left: 0.5rem;
   /* height: 3rem; */
 }
 
-.m-addbutton{
+.m-addbutton {
   margin-left: 1rem;
 }
 
-.m-submit-button{
+.m-submit-button {
   display: inline-block;
   padding: 0.4rem 1rem;
   margin-bottom: 1rem;
@@ -71,16 +70,23 @@
   border-radius: 0.25rem;
   background-color: #f8f9fa;
   color: #212529;
-  
 }
 
-.add-project{
-  background-color:#232634 ;
+.add-project {
+  background-color: #232634;
   border: 2px solid red;
   padding: 8px 16px;
   border-radius: 4px;
   color: #e70606;
-  
+}
+
+.project-added {
+  background-color: #232634;
+  border: 2px solid green;
+  padding: 8px 16px;
+  pointer-events: none;
+  border-radius: 4px;
+  color: green;
 }
 
 .delete-button {
