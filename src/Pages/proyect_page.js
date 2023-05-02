@@ -7,17 +7,27 @@ import "slick-carousel/slick/slick-theme.css";
 import "../Components/Styles/Proyect.css";
 import { NextArrow, PrevArrow } from "../Components/Styles/arrows.js";
 import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 
 function Proyect() {
+  const [projects, setRecordset4] = useState([]);
+
   const { user } = useAuth0();
 
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(true);
 
   useEffect(() => {
     const userRoles = user?.[`${process.env.REACT_APP_AUTH0_NAMESPACE}`] ?? [];
     console.log(`URL: ${process.env.REACT_APP_AUTH0_NAMESPACE}`);
-    setIsAdmin(userRoles.includes("Super-Manager"));
+    setIsAdmin(      userRoles.includes("Super-Manager") || userRoles.includes("Manager"));
+    callData();
   }, [user]);
+
+
+  function callData(){
+    getData4();
+  }
+
 
   const carouselSettings = {
     dots: false,
@@ -31,7 +41,28 @@ function Proyect() {
     centerPadding: "20%",
  
   };
-  const projects = [
+
+  const getData4 = async () => {
+    let variable3 = "pp";
+    console.log(isAdmin);
+    if (isAdmin) {
+      variable3 = "%";
+    } else {
+      variable3 = user.email;
+    }
+    console.log("Log Num 4: " + variable3);
+    try {
+      const response = await axios.post(
+        "https://edbapi.azurewebsites.net//api/matches/q3",
+        { variable3 }
+      );
+      setRecordset4(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const projects2 = [
     {
       name: "Project 1",
       description: "This is project 1",
@@ -59,8 +90,8 @@ function Proyect() {
               {projects.map((project, index) => (
                 <div key={index}>
                   <div className="project-card">
-                    <h3>{project.name}</h3>
-                    <p>{project.description}</p>
+                    <h3>{project.Name_Projects_Short}</h3>
+                    <p>hola</p>
                     <Link to={project.link}>View project</Link>
                   </div>
                 </div>
