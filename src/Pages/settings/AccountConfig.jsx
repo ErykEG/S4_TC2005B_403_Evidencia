@@ -1,8 +1,9 @@
-//simple const
+import "./styles/AccountConfig.css"
+
 const AccountConfig = () => {
   return (
-    <div>
-      <h1>AccountConfig</h1>
+    <div className="settings-accConfig">
+      <h1>Account Configuration</h1>
       <p>Configuración de la cuenta</p>
     </div>
   );

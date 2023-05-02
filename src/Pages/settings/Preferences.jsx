@@ -1,6 +1,9 @@
+import "./styles/Preferences.css"
+
+
 const Preferences = () => {
     return (
-        <div>
+        <div className="settings-preferences">
             <h1>Preferences</h1>
             <p>Preferencias del usuario</p>
         </div>

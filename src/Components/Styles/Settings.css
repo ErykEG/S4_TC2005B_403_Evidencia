@@ -37,16 +37,17 @@
 
 .admin-settings,
 .normal-settings {
-  grid-column-start: 1;
-  grid-column-end: 1;
+  /* grid-column-start: 1;
+  grid-column-end: 1; */
   width: 20rem;
   border-right: 1px solid #c6d0f5;
 }
 
 .settings-details {
   text-align: left;
-  grid-column-start: 2;
-  grid-column-end: 7;
+  /* grid-column-start: 2;
+  grid-column-end: 7; */
+  width: 45rem;
 }
 
 .settings-panel h3 {

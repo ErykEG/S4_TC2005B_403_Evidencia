@@ -20,6 +20,13 @@
   color: #c6d0f5;
   width: 97%;
   margin-left: 1.5%;
+  margin-bottom: 1.5%;
+  --border: 2px solid #babbf1;
+  border-radius: 7px;
+  border-spacing: 0;
+  border-collapse: separate;
+  border: var(--border);
+  overflow: hidden;
 }
 
 .m-app tr {

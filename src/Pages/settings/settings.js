@@ -8,6 +8,8 @@ import ExcelFileUpload from "../../Components/ImportExcel.jsx";
 
 import AccountConfig from "./AccountConfig";
 import Preferences from "./Preferences";
+import RegistroCand from "./RegistroCandidatos";
+import RegistroProy from "./RegistroProyectos";
 
 function Settings() {
   const { user } = useAuth0();
@@ -25,6 +27,8 @@ function Settings() {
   const componentMap = {
     button1: <AccountConfig />,
     button2: <Preferences />,
+    button3: <RegistroCand />,
+    button4: <RegistroProy />,
     // button3: <Component3 />,
     // add more buttons and components as needed
   }
@@ -42,10 +46,8 @@ function Settings() {
           <button onClick={handleButtonClick("button1")}>Account Configuration</button>
           <button onClick={handleButtonClick("button2")}>User Preferences</button>
           <h3 id="adminset">Admin Settings</h3>
-          <button>My Projects</button>
-          <button>Candidates Registration</button>
-          <button>Proyect Registration</button>
-          <button>Rules and Filters Configuration</button>
+          <button onClick={handleButtonClick("button3")}>Candidates Registration</button>
+          <button onClick={handleButtonClick("button4")}>Proyect Registration</button>
           <ExcelFileUpload />
           
         </div>
