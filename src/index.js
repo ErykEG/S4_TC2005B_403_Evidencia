@@ -7,7 +7,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Auth0ProviderWithNavigate from "./Components/Auth0_Provider_With_Navigate";
 import { BrowserRouter } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import NavBar from "./Components/Nav_Bar";
 import "rsuite/dist/rsuite.min.css";
 import { CustomProvider } from "rsuite";
 

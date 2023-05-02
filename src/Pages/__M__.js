@@ -360,7 +360,11 @@ function M() {
                       </button>
                     )}
                     {row.Is_Assigned == "ASSIGNED" && (
-                      <button className="project-added">Project Assigned</button>
+                      <button 
+                      className="project-added"
+                      // AGREGADO EN __M__ PARA PRUEBAS:
+                      onClick={() => handleOpenModal(row.Id_Candidates)}
+                      >Project Assigned</button>
                     )}
                   </td>
                 </tr>
@@ -368,18 +372,19 @@ function M() {
             })}{" "}
           </tbody>{" "}
         </table>{" "}
-        <Modal isOpen={modalData.isOpen} style={{ color: "black" }}>
-          <div style={{ marginLeft: "5%" }}>
-            <h2>Into which project?</h2>
+        <Modal className="Modal-M"isOpen={modalData.isOpen}>
+          <div className="Modal-M-app">
+            <h2>Projects</h2>
             <h6>Candidate Id: {modalData.id}</h6>
             <h6>Project Id: {prid}</h6>
-            <div style={{ maxHeight: "300px", overflowY: "auto" }}>
-              <table style={{ width: "100%" }}>
+            {/* <div style={{ maxHeight: "300px", overflowY: "auto" }}> */}
+            <div>
+              <table className="modal-proyects-table">
                 <tbody>
                   {recordset4.map((res) => (
                     <tr>
-                      <td style={{ padding: "10px", alignItems: "center" }}>
-                        <button
+                      <td style={{ padding: "10px", alignItems: "center" }} className="modal-proyects-row">
+                        <button 
                           onClick={() => setPrid(res.Id_Projects_Short)}
                           style={{ textAlign: "center" }}
                         >
@@ -391,17 +396,9 @@ function M() {
                 </tbody>
               </table>
             </div>
-            <div
-              style={{
-                marginTop: "10%",
-                marginLeft: "15%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <button onClick={handleCloseModal}>Cancel</button>
-              <button onClick={() => submitHandler()}>Continue</button>
+            <div className="Modal-Cancel-Continue">
+              <Button type="button" variant="danger" onClick={handleCloseModal}>Cancel</Button>
+              <Button type="button" variant="success" onClick={() => submitHandler()}>Continue</Button>
             </div>
           </div>
         </Modal>

@@ -1,6 +1,7 @@
 import "../Components/Styles/candidates.css";
 import { useEffect, useState } from "react";
 import M from "./M.js";
+import __M__ from "./__M__.js";
 
 function Candidates() {
   const [data, setData] = useState([]);
@@ -20,7 +21,8 @@ function Candidates() {
 
   return (
     <div className="candidates-app">
-      <M />
+      {/* <M /> */}
+      <__M__/>
     </div>
   );
 }

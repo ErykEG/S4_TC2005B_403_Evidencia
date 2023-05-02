@@ -91,9 +91,10 @@
   background-color: #232634;
   border: 2px solid green;
   padding: 8px 16px;
-  pointer-events: none;
   border-radius: 4px;
   color: green;
+  /* QUITADO EN __M__ PARA PRUEBAS
+  pointer-events: none; */
 }
 
 .delete-button {
@@ -106,4 +107,57 @@
 
   padding-top: 4px;
   padding-bottom: 4px;
+}
+
+.Modal-M{
+  background-color: #232634;
+  height: 60%;
+  margin: 10%;
+  margin-left: calc(10% + 60px);
+}
+
+.Modal-M-app {
+  background-color: #232634;
+}
+.Modal-M-app h2{
+  color: #f2d5cf;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.Modal-M-app h6{
+  padding-left: 60px;
+  color: white;
+}
+
+.Modal-Cancel-Continue{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 40%;
+  padding-right: 40%;
+}
+
+.ReactModalPortal{
+  background-color: #232634;
+}
+
+.ReactModal__Overlay{
+  background-color: #232634;
+}
+
+.ReactModal__Content {
+  background-color: #232634;
+}
+.modal-proyects-table{
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.modal-proyects-row {
+  background-color: #232634;
+  padding-left: 30%;
+  padding-right: 30%;
 }

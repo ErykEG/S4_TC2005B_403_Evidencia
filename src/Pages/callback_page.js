@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "../Components/Nav_Bar";
 import { useAuth0 } from "@auth0/auth0-react";
 import RedirectLogin from "../Components/Redirect_Login";
 import { useState, useEffect } from "react";
