@@ -93,8 +93,7 @@
   padding: 8px 16px;
   border-radius: 4px;
   color: green;
-  /* QUITADO EN __M__ PARA PRUEBAS
-  pointer-events: none; */
+  pointer-events: none;
 }
 
 .delete-button {

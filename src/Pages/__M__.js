@@ -362,8 +362,6 @@ function M() {
                     {row.Is_Assigned == "ASSIGNED" && (
                       <button 
                       className="project-added"
-                      // AGREGADO EN __M__ PARA PRUEBAS:
-                      onClick={() => handleOpenModal(row.Id_Candidates)}
                       >Project Assigned</button>
                     )}
                   </td>
