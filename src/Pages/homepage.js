@@ -1,5 +1,6 @@
 import "../Components/Styles/homepage.css";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import LicenciaDeUso from "../Components/LicenciaDeUso.jsx";
 
 const HomePage = () => {
   return (
@@ -57,7 +58,16 @@ const HomePage = () => {
           <p>Account Configuration</p>
         </div>
       </div>
-    </div>
+      
+      <div className="licencia-de-uso">
+        <h4>
+            <Link to="/LicenciaDeUso" className="homepagecard-titles">
+              {" "}
+              Licencia de uso de Software
+            </Link>
+        </h4>
+      </div>
+  </div>
   );
 };
 

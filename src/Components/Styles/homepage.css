@@ -52,3 +52,11 @@
   color: #f2d5cf;
   text-decoration: none;
 }
+
+.licencia-de-uso{
+  text-align: center;
+  padding-top: 1rem;
+  color: #f2d5cf;
+  text-decoration: underline;
+  text-decoration-color: #babbf1;
+}

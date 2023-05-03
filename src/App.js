@@ -27,7 +27,8 @@ import {
 } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import Proyect from "./Pages/proyect_page.js";
-import HomePage from "./Pages/homepage";
+import HomePage from "./Pages/homepage.js";
+import LicenciaDeUso from "./Components/LicenciaDeUso.jsx";
 
 function App() {
   const { user, isAuthenticated, isLoading, getAccessTokenSilently } =
@@ -82,6 +83,10 @@ function App() {
             <Route
               path="/about-us"
               element={<AuthenticationGuard component={About} />}
+            />
+            <Route
+              path="/LicenciaDeUso"
+              element={<AuthenticationGuard component={LicenciaDeUso} />}
             />
             <Route path="/callback" element={<CallbackPage />} />
             <Route path="*" element={<NotFoundPage />} />
