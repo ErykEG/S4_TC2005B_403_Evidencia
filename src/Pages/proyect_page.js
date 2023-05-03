@@ -167,9 +167,7 @@ function Proyect() {
         </div>
       ) : (
         <div className="normal-settings" style={{ height: "100%" }}>
-          <h3>Settings</h3>
-          <button>Configuracion de la cuenta</button>
-          <button>Preferencias del usuario</button>
+          <h3>No proyects assigned</h3>
         </div>
       )}
     </div>
