@@ -137,7 +137,7 @@ function Proyect() {
           </div>
           <Modal className="Modal-M" isOpen={modalData.isOpen} style={{ color: "black" }}>
           <div className="Modal-M-app">
-            <h2>Hola</h2>
+            <h2>Project Candidates</h2>
             <h6>Project Id: {modalData.id}</h6>
             <div className="proyect-scroll-m">
               <table className="modal-proyects-table">
