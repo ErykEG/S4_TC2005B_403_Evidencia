@@ -70,16 +70,17 @@ function Proyect() {
   const handleOpenModal = async (id) => {
     console.log(id);
     setVS(id);
-    getData5();
+    getData5(id);
     setModalData({ isOpen: true, id: id });
   };
+
 
   const handleCloseModal = () => {
     setModalData({ ...modalData, isOpen: false });
   };
 
-  const getData5 = async () => {
-    let v7 = varseven.toString();
+  const getData5 = async (id) => {
+    let v7 = id.toString();
     try {
       const response = await axios.post(
         "https://edbapi.azurewebsites.net//api/matches/q7",
