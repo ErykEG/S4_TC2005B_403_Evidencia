@@ -103,7 +103,7 @@ function Proyect() {
                 <div key={index}>
                   <div className="project-card">
                     <h3>{project.Name_Projects_Short}</h3>
-                    <p>hola</p>
+                    <p>{project.Job_Description}</p>
                     <button
                         className="add-project"
                         onClick={() => handleOpenModal(project.Id_Projects_Short)}
