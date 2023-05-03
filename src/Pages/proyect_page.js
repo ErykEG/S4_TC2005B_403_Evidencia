@@ -12,6 +12,7 @@ import Modal from "react-modal";
 
 function Proyect() {
   const [projects, setRecordset4] = useState([]);
+  const [cand, setRecordset5] = useState([]);
 
   const { user } = useAuth0();
 
@@ -63,32 +64,33 @@ function Proyect() {
     }
   };
 
-  const projects2 = [
-    {
-      name: "Project 1",
-      description: "This is project 1",
-      link: "/project1",
-    },
-    {
-      name: "Project 2",
-      description: "This is project 2",
-      link: "/project2",
-    },
-    {
-      name: "Project 3",
-      description: "This is project 3",
-      link: "/project3",
-    },
-  ];
 
   const [modalData, setModalData] = useState({ isOpen: false, id: null });
   const handleOpenModal = async (id) => {
     setModalData({ isOpen: true, id: id });
+    getData5();
   };
 
   const handleCloseModal = () => {
     setModalData({ ...modalData, isOpen: false });
   };
+
+  const getData5 = async () => {
+    let v7 = modalData.id;
+    try {
+      const response = await axios.post(
+        "https://edbapi.azurewebsites.net//api/matches/q7",
+        { v7 }
+      );
+      setRecordset5(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  function borrarCand(){
+    handleCloseModal();
+  }
 
   return (
     <div className="proyect-panel">
@@ -104,7 +106,7 @@ function Proyect() {
                     <p>hola</p>
                     <button
                         className="add-project"
-                        onClick={() => handleOpenModal(project.Id_Candidates)}
+                        onClick={() => handleOpenModal(project.Id_Projects_Short)}
                       >
                         Ver Candidates
                       </button>
@@ -116,10 +118,22 @@ function Proyect() {
           <Modal isOpen={modalData.isOpen} style={{ color: "black" }}>
           <div style={{ marginLeft: "5%" }}>
             <h2>Hola</h2>
-            <h6>Candidate Id: hola</h6>
+            <h6>Project Id: {modalData.id}</h6>
             <div style={{ maxHeight: "300px", overflowY: "auto" }}>
               <table style={{ width: "100%" }}>
                 <tbody>
+                {cand.map((res) => (
+                    <tr>
+                      <td style={{ padding: "10px", alignItems: "center" }}>
+                        <button
+                          onClick={() => borrarCand()}
+                          style={{ textAlign: "center" }}
+                        >
+                          {res.Name_Candidates}
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
