@@ -1,8 +1,29 @@
-.InicialPage-header {
+/* .InicialPage {
+    
+    margin-left: 20vw;
+} */
+
+.InicialPage-content{
+    width: 100%;
+    padding-right: 64px;
+    align-items: center;
     text-align: center;
-    background-color: #303446;
 }
 
-.InicialPage {
-    margin-right: 64px;
+/* .InicialPage-content img{
+    width: 15rem;
+} */
+
+.InicialPage-content h1{
+    font-size: 1.5rem;
+}
+
+#nagarro-logo-inicial{
+    padding-right: 1rem;
+    width: 15rem;
+}
+
+#pepel-logo-inicial{
+    padding-left: 1rem;
+    width: 12rem;
 }

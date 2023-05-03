@@ -15,7 +15,7 @@ export default function Singnup() {
         title="Sign Up or Log In Here!"
         accessibilityLabel="Learn more about this purple button"
       >
-        Sign Up or Log In Here!
+        Sign Up or Log In Here
       </button>
     </div>
   );

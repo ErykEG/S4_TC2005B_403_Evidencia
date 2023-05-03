@@ -1,12 +1,14 @@
 .signup-button {
-  border-radius: 12px;
+  border-radius: 7px;
   background-color: #47d7ac;
   color: #000000;
-  padding: 10px 20px 10px;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
   align-items: center;
-  width: 25rem;
-  border-color: #ffffff;
-  border-width: 2px;
+  width: auto;
+  border: 2px solid #babbf1;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -15,8 +17,7 @@
 }
 
 .signup-button:hover {
-  background-color: #ffffff;
+  background-color: #babbf1;
   color: #000000;
-  border-color: #47d7ac;
-  border-width: 2px;
+  border: 2px solid #FFF;
 }
