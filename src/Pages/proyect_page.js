@@ -9,6 +9,7 @@ import { NextArrow, PrevArrow } from "../Components/Styles/arrows.js";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import Modal from "react-modal";
+import { Button } from "react-bootstrap";
 
 function Proyect() {
   const [projects, setRecordset4] = useState([]);
@@ -134,16 +135,16 @@ function Proyect() {
               ))}
             </Slider>
           </div>
-          <Modal isOpen={modalData.isOpen} style={{ color: "black" }}>
-          <div style={{ marginLeft: "5%" }}>
+          <Modal className="Modal-M" isOpen={modalData.isOpen} style={{ color: "black" }}>
+          <div className="Modal-M-app">
             <h2>Hola</h2>
             <h6>Project Id: {modalData.id}</h6>
-            <div style={{ maxHeight: "300px", overflowY: "auto" }}>
-              <table style={{ width: "100%" }}>
+            <div className="proyect-scroll-m">
+              <table className="modal-proyects-table">
                 <tbody>
                 {cand.map((res) => (
                     <tr>
-                      <td style={{ padding: "10px", alignItems: "center" }}>
+                      <td style={{ padding: "10px", alignItems: "center" }} className="modal-proyects-row">
                         <button
                           onClick={() => borrarCand(res.Id_Candidates, res.Name_Candidates)}
                           style={{ textAlign: "center" }}
@@ -157,17 +158,9 @@ function Proyect() {
               </table>
               <h6>Candidate Selected: {candData.name}</h6>
             </div>
-            <div
-              style={{
-                marginTop: "10%",
-                marginLeft: "15%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <button onClick={handleCloseModal}>Cancel</button>
-              <button onClick={()=>delCand()}>Delete</button>
+            <div className="Modal-Cancel-Continue">
+              <Button type="button" variant="secondary" onClick={handleCloseModal}>Cancel</Button>
+              <Button type="button" variant="danger" onClick={()=>delCand()}>Remove</Button>
             </div>
           </div>
         </Modal>

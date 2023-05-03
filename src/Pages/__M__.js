@@ -219,6 +219,8 @@ function M() {
 
 
 
+
+
   return (
     <div className="m-app">
       <h1>Candidates Page</h1>
@@ -376,7 +378,7 @@ function M() {
             <h6>Candidate Id: {modalData.id}</h6>
             <h6>Project Id: {prid}</h6>
             {/* <div style={{ maxHeight: "300px", overflowY: "auto" }}> */}
-            <div>
+            <div className="proyect-scroll-m">
               <table className="modal-proyects-table">
                 <tbody>
                   {recordset4.map((res) => (
@@ -395,8 +397,8 @@ function M() {
               </table>
             </div>
             <div className="Modal-Cancel-Continue">
-              <Button type="button" variant="danger" onClick={handleCloseModal}>Cancel</Button>
-              <Button type="button" variant="success" onClick={() => submitHandler()}>Continue</Button>
+              <Button type="button" variant="secondary" onClick={handleCloseModal}>Cancel</Button>
+              <Button type="button" variant="success" onClick={() => submitHandler()}>Add</Button>
             </div>
           </div>
         </Modal>

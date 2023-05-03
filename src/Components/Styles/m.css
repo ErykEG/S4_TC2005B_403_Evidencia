@@ -81,10 +81,14 @@
 
 .add-project {
   background-color: #232634;
-  border: 2px solid darkcyan;
+  border: 2px solid gray;
   padding: 8px 16px;
   border-radius: 4px;
-  color: darkcyan;
+  color: gray;
+}
+
+.add-project:hover {
+  background-color: white;
 }
 
 .project-added {
@@ -135,28 +139,48 @@
   align-items: center;
   padding-left: 40%;
   padding-right: 40%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
-.ReactModalPortal{
-  background-color: #232634;
-}
-
-.ReactModal__Overlay{
-  background-color: #232634;
-}
-
-.ReactModal__Content {
-  background-color: #232634;
-}
 .modal-proyects-table{
   width: 60%;
   margin-left: 20%;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  overflow: auto;
+}
+
+.proyect-scroll-m{
+  overflow: auto;
+  height: 290px;
+  vertical-align: top;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: #FFF 1px solid;
+  border-bottom: #FFF 1px solid;
+  width: 90%;
+  margin-left: 5%;
 }
 
 .modal-proyects-row {
   background-color: #232634;
   padding-left: 30%;
   padding-right: 30%;
+  text-align: center;
+}
+
+.modal-proyects-row button {
+  background-color: #232634;
+  color: #c6d0f5;
+  border: 2px solid #a6d189;
+}
+
+.modal-proyects-row button:active, .modal-proyects-row button:hover, .modal-proyects-row button:focus {
+  background-color: #FFF;
+  color: #000000;
+}
+
+.modal-proyects-row button.accepted {
+  background-color: #0f0
 }
