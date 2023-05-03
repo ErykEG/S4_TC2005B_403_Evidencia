@@ -55,7 +55,7 @@ Además, el Licenciatario pondrá en conocimiento del Licenciante todas las posi
 
 Por último, se prohíbe de forma expresa el uso del Software con una finalidad distinta de la recogida en la presente Estipulación.
 
-####TERCERA. Contenido de la Licencia
+#### TERCERA. Contenido de la Licencia
 
 El Licenciatario podrá llevar a cabo las siguientes actividades en relación al Software:
 
