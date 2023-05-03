@@ -66,9 +66,12 @@ function Proyect() {
 
 
   const [modalData, setModalData] = useState({ isOpen: false, id: null });
+  const [varseven, setVS] = useState(0);
   const handleOpenModal = async (id) => {
-    setModalData({ isOpen: true, id: id });
+    console.log(id);
+    setVS(id);
     getData5();
+    setModalData({ isOpen: true, id: id });
   };
 
   const handleCloseModal = () => {
@@ -76,7 +79,7 @@ function Proyect() {
   };
 
   const getData5 = async () => {
-    let v7 = modalData.id;
+    let v7 = varseven.toString();
     try {
       const response = await axios.post(
         "https://edbapi.azurewebsites.net//api/matches/q7",
