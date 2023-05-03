@@ -1,7 +1,8 @@
 .LicenciaDeUso-page{
     margin-left: 64px;
     margin-bottom: 64px;
-    width: 100%;
+    width: calc(100% - 128px);
+    float: left;
 }
 
 .LicenciaDeUso-page h1{
