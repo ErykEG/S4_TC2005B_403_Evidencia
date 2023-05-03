@@ -8,6 +8,7 @@ import "../Components/Styles/Proyect.css";
 import { NextArrow, PrevArrow } from "../Components/Styles/arrows.js";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
+import Modal from "react-modal";
 
 function Proyect() {
   const [projects, setRecordset4] = useState([]);
@@ -43,18 +44,18 @@ function Proyect() {
   };
 
   const getData4 = async () => {
-    let variable3 = "pp";
+    let v6 = "pp";
     console.log(isAdmin);
     if (isAdmin) {
-      variable3 = "%";
+      v6 = "%";
     } else {
-      variable3 = user.email;
+      v6 = user.email;
     }
-    console.log("Log Num 4: " + variable3);
+    console.log("Log Num 4: " + v6);
     try {
       const response = await axios.post(
-        "https://edbapi.azurewebsites.net//api/matches/q3",
-        { variable3 }
+        "https://edbapi.azurewebsites.net//api/matches/q6",
+        { v6 }
       );
       setRecordset4(response.data);
     } catch (error) {
@@ -80,6 +81,15 @@ function Proyect() {
     },
   ];
 
+  const [modalData, setModalData] = useState({ isOpen: false, id: null });
+  const handleOpenModal = async (id) => {
+    setModalData({ isOpen: true, id: id });
+  };
+
+  const handleCloseModal = () => {
+    setModalData({ ...modalData, isOpen: false });
+  };
+
   return (
     <div className="proyect-panel">
       {isAdmin ? (
@@ -92,12 +102,41 @@ function Proyect() {
                   <div className="project-card">
                     <h3>{project.Name_Projects_Short}</h3>
                     <p>hola</p>
-                    <Link to={project.link}>View project</Link>
+                    <button
+                        className="add-project"
+                        onClick={() => handleOpenModal(project.Id_Candidates)}
+                      >
+                        Ver Candidates
+                      </button>
                   </div>
                 </div>
               ))}
             </Slider>
           </div>
+          <Modal isOpen={modalData.isOpen} style={{ color: "black" }}>
+          <div style={{ marginLeft: "5%" }}>
+            <h2>Hola</h2>
+            <h6>Candidate Id: hola</h6>
+            <div style={{ maxHeight: "300px", overflowY: "auto" }}>
+              <table style={{ width: "100%" }}>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+            <div
+              style={{
+                marginTop: "10%",
+                marginLeft: "15%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <button onClick={handleCloseModal}>Cancel</button>
+              <button onClick={handleCloseModal}>Continue</button>
+            </div>
+          </div>
+        </Modal>
         </div>
       ) : (
         <div className="normal-settings" style={{ height: "100%" }}>
