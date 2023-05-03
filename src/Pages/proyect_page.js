@@ -79,6 +79,19 @@ function Proyect() {
     setModalData({ ...modalData, isOpen: false });
   };
 
+  function delCand(){
+    const expenseData = {
+      idCand: candData.id,
+    };
+    axios
+    .post("https://edbapi.azurewebsites.net//api/matches/q8", expenseData)
+    .then(function (response) {
+      console.log(response);
+      //props.onSaveExpenseData();
+    });
+    handleCloseModal();
+  }
+
   const getData5 = async (id) => {
     let v7 = id.toString();
     try {
@@ -92,8 +105,10 @@ function Proyect() {
     }
   };
 
-  function borrarCand(){
-    handleCloseModal();
+
+  const [candData, setCD] = useState({ id: null, name: "" });
+  function borrarCand(id, name){
+    setCD({ id: id, name: name });
   }
 
   return (
@@ -130,7 +145,7 @@ function Proyect() {
                     <tr>
                       <td style={{ padding: "10px", alignItems: "center" }}>
                         <button
-                          onClick={() => borrarCand()}
+                          onClick={() => borrarCand(res.Id_Candidates, res.Name_Candidates)}
                           style={{ textAlign: "center" }}
                         >
                           {res.Name_Candidates}
@@ -140,6 +155,7 @@ function Proyect() {
                   ))}
                 </tbody>
               </table>
+              <h6>Candidate Selected: {candData.name}</h6>
             </div>
             <div
               style={{
@@ -151,7 +167,7 @@ function Proyect() {
               }}
             >
               <button onClick={handleCloseModal}>Cancel</button>
-              <button onClick={handleCloseModal}>Continue</button>
+              <button onClick={()=>delCand()}>Delete</button>
             </div>
           </div>
         </Modal>
