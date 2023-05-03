@@ -111,7 +111,7 @@ function Proyect() {
                         className="add-project"
                         onClick={() => handleOpenModal(project.Id_Projects_Short)}
                       >
-                        Ver Candidates
+                        View Candidates
                       </button>
                   </div>
                 </div>

@@ -23,13 +23,20 @@
   /* flex-basis: 35%; */
   /* width: 20%; */
   text-align: center;
-  line-height: 20vh;
+  /* line-height: 20vh; */
   font-size: 1rem;
   border-radius: 7px;
   border: 2px solid #babbf1;
   text-decoration-color: white;
   margin-bottom: 3rem;
   margin-right: 3rem;
+}
+
+.project-card p{
+  padding-top: 10%;
+  padding-bottom: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .project-card h3 {
@@ -41,4 +48,8 @@
 
 .project-title{
   text-align: center;
+}
+
+.add-project{
+  margin-bottom: 5%;
 }
